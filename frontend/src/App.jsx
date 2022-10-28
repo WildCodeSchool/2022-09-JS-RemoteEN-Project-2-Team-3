@@ -1,12 +1,11 @@
-import Home from "@pages/Home";
-
+import React from "react";
+import WeatherCard from "./components/weather-card/weather-card";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <Home />
-      <p>coucou</p>
+      <WeatherCard />
     </div>
   );
 }

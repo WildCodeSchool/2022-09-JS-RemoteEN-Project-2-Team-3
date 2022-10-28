@@ -1,10 +1,20 @@
+@font-face {
+  font-family: "RobotoFlex";
+  src: url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap');
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  font-family: 'RobotoFlex', sans-serif;
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+    sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: rgb(116,113,185);
+  background: linear-gradient(90deg, rgba(116,113,185,1) 0%, rgba(86,83,135,1) 20%, rgba(81,78,129,1) 50%, rgba(90,87,139,1) 80%, rgba(116,113,185,1) 100%);
+  /* background-image: linear-gradient(to right, rgba(81, 78, 129, 0.77), rgba(81, 78, 129, 1), rgba(81, 78, 129, 1),rgba(81, 78, 129, 0.77)); */
+  backdrop-filter: blur(100px);
 }
 
 code {
@@ -16,7 +26,7 @@ code {
   text-align: center;
 }
 
-.App-logo {
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -53,4 +63,4 @@ code {
 
 button {
   font-size: calc(10px + 2vmin);
-}
+} */
