@@ -1,14 +1,12 @@
-import Home from "@pages/Home";
-
 import "./App.css";
+import Weather from "./components/Weather";
+import "./components/Weather.css";
 
 function App() {
   return (
-    <div className="App">
-      <Home />
-      <p>coucou</p>
+    <div>
+      <Weather />
     </div>
   );
 }
-
 export default App;
