@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import DailyWeather from "./DailyWeather/DailyWeather";
+import DailyWeather from "./DailyWeather";
 
 function Weather() {
   const [weatherData, setWeatherData] = useState();

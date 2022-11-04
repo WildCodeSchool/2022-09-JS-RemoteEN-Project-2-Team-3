@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,200;8..144,400&display=swap');
 
-@media screen and (min-width: 1024px){
+@media screen and (max-width: 1024px){
 .weekly_forecast {
         display: flex;
         justify-content: space-around;
@@ -14,9 +14,7 @@
     }
 }
 
-body{
-    background-color: #514E81;
-}
+
 .weekly_forecast {
     display: flex;
     justify-content: space-around;
