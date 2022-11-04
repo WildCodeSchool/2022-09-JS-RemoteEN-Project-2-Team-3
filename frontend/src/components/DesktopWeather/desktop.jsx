@@ -12,9 +12,9 @@ function DesktopWeather() {
         <div className="navbar">
           <ul>
             <li>
-              <a href="#">Detail daily forecast</a>
+              <a href="#daily">Detail daily forecast</a>
             </li>
-            <a href="#">Detail daily forecast</a>
+            <a href="#weekly">Detail weekly forecast</a>
           </ul>
         </div>
       </div>
