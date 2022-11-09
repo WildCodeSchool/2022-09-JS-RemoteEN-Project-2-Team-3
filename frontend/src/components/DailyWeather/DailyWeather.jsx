@@ -1,4 +1,5 @@
 import React from "react";
+import "./Weather.css";
 
 function DailyWeather({ dateNum, dayIcon, tempHigh, tempLow }) {
   let dateNumFormatted = new Date(dateNum * 1000);
@@ -9,7 +10,7 @@ function DailyWeather({ dateNum, dayIcon, tempHigh, tempLow }) {
   );
 
   return (
-    <div>
+    <div className="weekly-item">
       <img src={dayIcon} alt="icon" />
       <h2>{dateNumFormatted}</h2>
       <h2>{tempHigh}°C</h2>

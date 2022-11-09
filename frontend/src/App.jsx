@@ -5,7 +5,6 @@ import axios from "axios";
 import WeatherCard from "./components/weather-card/weather-card";
 import Weather from "./components/DailyWeather/Weather";
 import DesktopWeather from "./components/DesktopWeather/desktop";
-import "./components/DailyWeather/Weather.css";
 import "./App.css";
 
 function App() {
@@ -35,9 +34,7 @@ function App() {
           .then((response) => response.data)
           .then((airPollutionData) => {
             setWeatherData(data);
-            // console.log("Data:", data);
             setAir(airPollutionData);
-            // console.log("Air Pollution:", airPollutionData);
           });
         axios
           .get(dailyForecastUrl(data.coord.lon, data.coord.lat))
@@ -45,17 +42,13 @@ function App() {
           .then((dailyWeatherData) => {
             setDailyWeather(dailyWeatherData);
           });
+      })
+      .catch((error) => {
+        if (error.response) {
+          alert("Incorrect city!");
+        }
       });
   };
-
-  // React.useEffect(() => {
-  //   fetch(API)
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setWeatherData(data);
-  //     })
-  //     .catch((err) => console.error(err));
-  // }, []);
 
   React.useEffect(() => {
     searchLocation();
@@ -71,6 +64,8 @@ function App() {
     setLocation(event.target.value);
   }
 
+  const onClickHandler = () => searchLocation();
+
   return (
     <div className="App">
       <div className="desktop_flex">
@@ -78,6 +73,7 @@ function App() {
         <WeatherCard
           location={location}
           keyDownHandler={keyDownHandler}
+          onClickHandler={onClickHandler}
           handleChange={handleChange}
           searchLocation={searchLocation}
           weatherData={weatherData}
