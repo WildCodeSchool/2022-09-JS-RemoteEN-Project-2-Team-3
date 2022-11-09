@@ -32,7 +32,7 @@ function DetailTodayWeather({
       <h2 className="temp_body">{temp}°C</h2>
       <h2 className="tempFeels_body">{tempFeels}°C</h2>
       <img src={hourIcon} alt="icon" className="hourIcon_body" id="hour_icon" />
-      <h2 className="humidity_body" id="humidity">
+      <h2 className="humidity_body" id="desktop_title">
         {hourHumidity}%
       </h2>
       <h2 className="hourPop_body">{hourPop}%</h2>
@@ -67,13 +67,6 @@ function HourlyWeather() {
   if (hourWeatherData) console.log(hourWeatherData);
   return (
     <div className="detail_forecast_container">
-      <div className="detail_forecast_title">
-        <h2 className="item_title">Hour</h2>
-        <h2 className="item_title">Temperature/ Feels like</h2>
-        <h2 className="item_title">Probability of precipitation</h2>
-        <h2 className="item_title">Wind</h2>
-        <h2 className="item_title">Atmospheric pressure</h2>
-      </div>
       <div className="detail_forecast">
         {hourWeatherData ? (
           hourWeatherData
@@ -98,6 +91,35 @@ function HourlyWeather() {
         ) : (
           <h2>Loading...</h2>
         )}
+      </div>
+      <div className="detail_forecast_title">
+        <h2 className="item_title">Hour</h2>
+        <h2 className="item_title" id="desktop_title">
+          Cloudiness
+        </h2>
+        <h2 className="item_title" id="mobile_title">
+          Temperature/ Feels like
+        </h2>
+        <h2 className="item_title" id="desktop_title">
+          Temperature
+        </h2>
+        <h2 className="item_title" id="desktop_title">
+          Feels like temperature
+        </h2>
+        <h2 className="item_title" id="desktop_title">
+          Humidity
+        </h2>
+        <h2 className="item_title">Probability of precipitation</h2>
+        <h2 className="item_title" id="desktop_title">
+          Wind direction
+        </h2>
+        <h2 className="item_title" id="desktop_title">
+          Wind speed
+        </h2>
+        <h2 className="item_title" id="mobile_title">
+          Wind
+        </h2>
+        <h2 className="item_title">Atmospheric pressure</h2>
       </div>
     </div>
   );
