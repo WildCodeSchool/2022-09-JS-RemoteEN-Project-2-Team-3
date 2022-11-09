@@ -1,8 +1,8 @@
 import React from "react";
-import "./desktop.css";
 import logo from "./Icons/logo.svg";
+import "./desktop.css";
 
-function DesktopWeather() {
+function DesktopWeather({ weatherData }) {
   return (
     <div className="main_container">
       <div className="header">
@@ -18,14 +18,16 @@ function DesktopWeather() {
           </ul>
         </div>
       </div>
-      <div className="main_info">
-        <div className="city">
-          <p>Berlin</p>
+      {weatherData && (
+        <div className="main_info">
+          <div className="city">
+            <p>{weatherData.name}</p>
+          </div>
+          <div className="current_temperature">
+            <p>{Math.round(weatherData.main.temp)}°C</p>
+          </div>
         </div>
-        <div className="current_temperature">
-          <p>-2°</p>
-        </div>
-      </div>
+      )}
     </div>
   );
 }

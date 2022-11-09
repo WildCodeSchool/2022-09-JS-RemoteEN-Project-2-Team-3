@@ -23,4 +23,7 @@
     font-family: 'Roboto Flex';
     font-size: 24;
     background-color: rgb(217, 217, 217, 10%);
+    margin: 5%;
+    padding: 2%;
+    border-radius: 30px;
 }

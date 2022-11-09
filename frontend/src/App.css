@@ -3,6 +3,10 @@
   src: url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap');
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: 'RobotoFlex', sans-serif;

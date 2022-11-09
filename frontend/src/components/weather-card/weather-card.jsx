@@ -1,37 +1,44 @@
 import "./weather-card.css";
-import axios from "axios";
+// import axios from "axios";
 import React from "react";
 import humidity from "./Icons/humidity.png";
 import atmospheric from "./Icons/atmospheric.png";
+import airQuality from "./Icons/airQuality.png";
 import wind from "./Icons/wind.png";
 
-function WeatherCard() {
-  const [weatherData, setWeatherData] = React.useState();
-  const [air, setAir] = React.useState();
-  const [location, setLocation] = React.useState("London");
+function WeatherCard({
+  handleChange,
+  keyDownHandler,
+  location,
+  air,
+  weatherData,
+}) {
+  // const [weatherData, setWeatherData] = React.useState();
+  // const [air, setAir] = React.useState();
+  // const [location, setLocation] = React.useState("London");
 
-  const API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY;
+  // const API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY;
 
-  const baseUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}&units=metric`;
-  const secondUrl = (lon, lat) =>
-    `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${API_KEY}`;
+  // const baseUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}&units=metric`;
+  // const secondUrl = (lon, lat) =>
+  //   `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${API_KEY}`;
 
-  const searchLocation = () => {
-    axios
-      .get(baseUrl)
-      .then((response) => response.data)
-      .then((data) => {
-        axios
-          .get(secondUrl(data.coord.lon, data.coord.lat))
-          .then((response) => response.data)
-          .then((airPollutionData) => {
-            setWeatherData(data);
-            // console.log("Data:", data);
-            setAir(airPollutionData);
-            // console.log("Air Pollution:", airPollutionData);
-          });
-      });
-  };
+  // const searchLocation = () => {
+  //   axios
+  //     .get(baseUrl)
+  //     .then((response) => response.data)
+  //     .then((data) => {
+  //       axios
+  //         .get(secondUrl(data.coord.lon, data.coord.lat))
+  //         .then((response) => response.data)
+  //         .then((airPollutionData) => {
+  //           setWeatherData(data);
+  //           // console.log("Data:", data);
+  //           setAir(airPollutionData);
+  //           // console.log("Air Pollution:", airPollutionData);
+  //         });
+  //     });
+  // };
 
   // const searchLocationWithAsync = async () => {
   //   const data = await axios.get(baseUrl).then((response) => response.data);
@@ -44,17 +51,21 @@ function WeatherCard() {
   //   console.log("Air Pollution:", airPollutionData);
   // };
 
-  React.useEffect(() => {
-    searchLocation();
-  }, []);
+  // React.useEffect(() => {
+  //   searchLocation();
+  // }, []);
 
-  const keyDownHandler = (event) => {
-    if (event.key === "Enter") {
-      searchLocation();
-    }
-  };
+  // const keyDownHandler = (event) => {
+  //   if (event.key === "Enter") {
+  //     searchLocation();
+  //   }
+  // };
 
   // console.log(secondUrl);
+
+  // function handleChange(event) {
+  //   setLocation(event.target.value);
+  // }
 
   const date = new Date();
   const setDate = date.toDateString();
@@ -64,7 +75,7 @@ function WeatherCard() {
       <div className="search">
         <input
           value={location}
-          onChange={(event) => setLocation(event.target.value)}
+          onChange={handleChange}
           onKeyDown={keyDownHandler}
           placeholder="Search city"
           type="text"
@@ -91,7 +102,10 @@ function WeatherCard() {
                 Wind: {Math.round(weatherData.wind.speed)} km/h
                 <img src={wind} alt="wind" />
               </li>
-              <li>Air quality: {air.list[0].main.aqi}</li>
+              <li>
+                Air quality: {air.list[0].main.aqi}
+                <img src={airQuality} alt="air_quality" />
+              </li>
               <li>
                 Pressure: {weatherData.main.pressure} hPa
                 <img src={atmospheric} alt="atmospheric" />
