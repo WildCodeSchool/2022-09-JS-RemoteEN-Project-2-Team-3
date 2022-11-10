@@ -1,6 +1,6 @@
 import React from "react";
 
-function DailyWeather({ dateNum, dayIcon, tempHigh, tempLow }) {
+function DailyWeather({ dateNum, dayIcon, tempHigh, tempLow, pop }) {
   let dateNumFormatted = new Date(dateNum * 1000);
   dateNumFormatted.getDay();
   const options = { weekday: "short" };
@@ -14,6 +14,7 @@ function DailyWeather({ dateNum, dayIcon, tempHigh, tempLow }) {
       <h2>{dateNumFormatted}</h2>
       <h2>{tempHigh}°C</h2>
       <h2>{tempLow}°C</h2>
+      <h2>Precipitation: {pop * 100}%</h2>
     </div>
   );
 }
