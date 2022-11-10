@@ -1,45 +1,71 @@
 import "./weather-card.css";
-import axios from "axios";
+// import axios from "axios";
 import React from "react";
 import humidity from "./Icons/humidity.png";
 import atmospheric from "./Icons/atmospheric.png";
+import airQuality from "./Icons/airQuality.png";
 import wind from "./Icons/wind.png";
 
-function WeatherCard() {
-  const [weatherData, setWeatherData] = React.useState();
+function WeatherCard({
+  handleChange,
+  keyDownHandler,
+  location,
+  air,
+  weatherData,
+}) {
+  // const [weatherData, setWeatherData] = React.useState();
   // const [air, setAir] = React.useState();
-  const [location, setLocation] = React.useState("London");
+  // const [location, setLocation] = React.useState("London");
 
-  const API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY;
+  // const API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY;
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}&units=metric`;
+  // const baseUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}&units=metric`;
+  // const secondUrl = (lon, lat) =>
+  //   `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${API_KEY}`;
 
-  const searchLocation = () => {
-    axios
-      .get(url)
-      .then((response) => response.data)
-      .then((data) => {
-        setWeatherData(data);
-      });
-  };
-
-  // const searchAir = () => {
+  // const searchLocation = () => {
   //   axios
-  //     .get(newUrl)
+  //     .get(baseUrl)
   //     .then((response) => response.data)
   //     .then((data) => {
-  //       setAir(data);
+  //       axios
+  //         .get(secondUrl(data.coord.lon, data.coord.lat))
+  //         .then((response) => response.data)
+  //         .then((airPollutionData) => {
+  //           setWeatherData(data);
+  //           // console.log("Data:", data);
+  //           setAir(airPollutionData);
+  //           // console.log("Air Pollution:", airPollutionData);
+  //         });
   //     });
   // };
 
-  React.useEffect(searchLocation, []);
+  // const searchLocationWithAsync = async () => {
+  //   const data = await axios.get(baseUrl).then((response) => response.data);
+  //   const airPollutionData = await axios
+  //     .get(secondUrl(data.coord.lon, data.coord.lat))
+  //     .then((response) => response.data);
+  //   setWeatherData(data);
+  //   console.log("Data:", data);
+  //   setAir(airPollutionData);
+  //   console.log("Air Pollution:", airPollutionData);
+  // };
 
-  const keyDownHandler = (event) => {
-    if (event.key === "Enter") {
-      searchLocation();
-      // searchAir();
-    }
-  };
+  // React.useEffect(() => {
+  //   searchLocation();
+  // }, []);
+
+  // const keyDownHandler = (event) => {
+  //   if (event.key === "Enter") {
+  //     searchLocation();
+  //   }
+  // };
+
+  // console.log(secondUrl);
+
+  // function handleChange(event) {
+  //   setLocation(event.target.value);
+  // }
 
   const date = new Date();
   const setDate = date.toDateString();
@@ -49,7 +75,7 @@ function WeatherCard() {
       <div className="search">
         <input
           value={location}
-          onChange={(event) => setLocation(event.target.value)}
+          onChange={handleChange}
           onKeyDown={keyDownHandler}
           placeholder="Search city"
           type="text"
@@ -64,6 +90,7 @@ function WeatherCard() {
           <div className="current-temperature">
             <p>{Math.round(weatherData.main.temp)}°C</p>
             <p>Feels like: {Math.round(weatherData.main.feels_like)}°C</p>
+            <p>{weatherData.weather[0].main}</p>
           </div>
           <div className="extra-info">
             <ul>
@@ -75,7 +102,10 @@ function WeatherCard() {
                 Wind: {Math.round(weatherData.wind.speed)} km/h
                 <img src={wind} alt="wind" />
               </li>
-              {/* <li>Air quality: {air.list.main.aqi}</li> */}
+              <li>
+                Air quality: {air.list[0].main.aqi}
+                <img src={airQuality} alt="air_quality" />
+              </li>
               <li>
                 Pressure: {weatherData.main.pressure} hPa
                 <img src={atmospheric} alt="atmospheric" />

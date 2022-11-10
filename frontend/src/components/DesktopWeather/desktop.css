@@ -1,0 +1,53 @@
+.main_container {
+    color: white;
+    width: 70%;
+}
+.header {
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 1% 1%;
+}
+.navbar {
+    width: 100%;
+}
+.navbar ul {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+}
+.navbar ul li {
+    margin: 0 5%;
+    list-style-type: none;
+}
+.logo img {
+    width: 80%;
+}
+.city {
+    margin-bottom: 2%;
+}
+.city p{
+    font-size: 6em;
+    font-weight: 300;
+    padding: 2% 5%;
+    margin-bottom: 2%;
+}
+.current_temperature p{
+    font-size: 7em;
+    font-style: normal;
+    font-weight: 100;
+    margin: 2% 0;
+}
+.navbar a {
+    color: white;
+    text-decoration: none;
+}
+.navbar a:hover {
+    color: rgb(208, 208, 208);
+}
+
+@media screen and (max-width: 1023px) {
+    .main_container {
+        display: none;
+    }
+}
