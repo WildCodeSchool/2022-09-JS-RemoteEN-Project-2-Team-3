@@ -30,7 +30,9 @@ function DetailTodayWeather({
     <div className="forecast_body">
       <h2 className="hour_body">{`${hour}:00`}</h2>
       <h2 className="temp_body">{temp}°C</h2>
-      <h2 className="tempFeels_body">{tempFeels}°C</h2>
+      <h2 className="tempFeels_body" id="desktop_title">
+        {tempFeels}°C
+      </h2>
       <img src={hourIcon} alt="icon" className="hourIcon_body" id="hour_icon" />
       <h2 className="humidity_body" id="desktop_title">
         {hourHumidity}%
@@ -97,12 +99,7 @@ function HourlyWeather() {
         <h2 className="item_title" id="desktop_title">
           Cloudiness
         </h2>
-        <h2 className="item_title" id="mobile_title">
-          Temperature/ Feels like
-        </h2>
-        <h2 className="item_title" id="desktop_title">
-          Temperature
-        </h2>
+        <h2 className="item_title">Temperature</h2>
         <h2 className="item_title" id="desktop_title">
           Feels like temperature
         </h2>
