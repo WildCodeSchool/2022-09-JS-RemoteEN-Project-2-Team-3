@@ -3,6 +3,9 @@
 @media screen and (max-width: 1024px){
 .weekly_forecast {
         display: flex;
+        flex-wrap: nowrap;
+        /* flex-wrap: wrap; */
+        /* flex-direction: column; */
         justify-content: space-around;
         text-align: center;
         color: #fff;
@@ -12,6 +15,10 @@
         font-size: 20px;
         overflow-x: auto;
     }
+/* .weekly-item {
+    display: flex;
+    flex-wrap: nowrap;
+} */
 }
 
 

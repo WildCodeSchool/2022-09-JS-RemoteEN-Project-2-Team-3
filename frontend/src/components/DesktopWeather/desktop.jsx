@@ -12,7 +12,7 @@ function DesktopWeather({ weatherData }) {
         <div className="navbar">
           <ul>
             <li>
-              <a href="#daily">Detail daily forecast</a>
+              <a href="#daily">Detail hourly forecast</a>
             </li>
             <a href="#weekly">Detail weekly forecast</a>
           </ul>

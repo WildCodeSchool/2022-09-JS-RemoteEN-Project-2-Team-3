@@ -5,6 +5,8 @@ import humidity from "./Icons/humidity.png";
 import atmospheric from "./Icons/atmospheric.png";
 import airQuality from "./Icons/airQuality.png";
 import wind from "./Icons/wind.png";
+import logo from "./Icons/logo.svg";
+import search from "./Icons/searchButton.svg";
 
 function WeatherCard({
   handleChange,
@@ -12,6 +14,7 @@ function WeatherCard({
   location,
   air,
   weatherData,
+  onClickHandler,
 }) {
   // const [weatherData, setWeatherData] = React.useState();
   // const [air, setAir] = React.useState();
@@ -72,6 +75,11 @@ function WeatherCard({
 
   return (
     <div className="weather-card">
+      <header>
+        <div className="logo">
+          <img src={logo} alt={logo} />
+        </div>
+      </header>
       <div className="search">
         <input
           value={location}
@@ -80,6 +88,9 @@ function WeatherCard({
           placeholder="Search city"
           type="text"
         />
+        <button type="button" onClick={onClickHandler}>
+          <img src={search} alt="search" />
+        </button>
       </div>
       {weatherData && (
         <>

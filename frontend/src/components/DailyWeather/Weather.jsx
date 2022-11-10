@@ -1,4 +1,5 @@
 // import React, { useState, useEffect } from "react";
+import "./Weather.css";
 import DailyWeather from "./DailyWeather";
 
 function Weather({ dailyWeather }) {
