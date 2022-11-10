@@ -5,6 +5,7 @@ import axios from "axios";
 import WeatherCard from "./components/weather-card/weather-card";
 import Weather from "./components/DailyWeather/Weather";
 import DesktopWeather from "./components/DesktopWeather/desktop";
+import HourlyWeather from "./components/DetailForecast/DetailForecast";
 import "./App.css";
 
 function App() {
@@ -45,6 +46,8 @@ function App() {
       })
       .catch((error) => {
         if (error.response) {
+          // TODO: Please display a notification in UI
+          // eslint-disable-next-line no-alert
           alert("Incorrect city!");
         }
       });
@@ -83,6 +86,7 @@ function App() {
       <a id="weekly">
         <Weather dailyWeather={dailyWeather} />
       </a>
+      <HourlyWeather />
     </div>
   );
 }
