@@ -6,7 +6,7 @@ function Weather() {
 
   const lon = 11.061859;
   const lat = 49.460983;
-  const APIKey = "ffe63745a1e6cbad92e44b2bf6f0ea6a";
+  const APIKey = import.meta.env.VITE_OPENWEATHER_API_KEY;
 
   useEffect(() => {
     const API = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&exclude=minutely&appid=${APIKey}`;

@@ -11,8 +11,8 @@ body {
     sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: rgb(116,113,185);
-  background: linear-gradient(90deg, rgba(116,113,185,1) 0%, rgba(86,83,135,1) 20%, rgba(81,78,129,1) 50%, rgba(90,87,139,1) 80%, rgba(116,113,185,1) 100%);
+  background: rgb(116, 113, 185);
+  background: linear-gradient(90deg, rgba(116, 113, 185, 1) 0%, rgba(86, 83, 135, 1) 20%, rgba(81, 78, 129, 1) 50%, rgba(90, 87, 139, 1) 80%, rgba(116, 113, 185, 1) 100%);
   /* background-image: linear-gradient(to right, rgba(81, 78, 129, 0.77), rgba(81, 78, 129, 1), rgba(81, 78, 129, 1),rgba(81, 78, 129, 0.77)); */
   backdrop-filter: blur(100px);
 }
@@ -24,6 +24,13 @@ code {
 
 .App {
   text-align: center;
+}
+
+h1 {
+  color: white;
+  font-size: 20px;
+  font-style: normal;
+
 }
 
 /* .App-logo {
