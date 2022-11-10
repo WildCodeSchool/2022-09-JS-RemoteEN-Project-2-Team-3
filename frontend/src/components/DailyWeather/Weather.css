@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,200;8..144,400&display=swap');
 
-@media screen and (min-width: 1024px){
+@media screen and (max-width: 1024px){
 .weekly_forecast {
         display: flex;
+        flex-wrap: nowrap;
+        /* flex-wrap: wrap; */
+        /* flex-direction: column; */
         justify-content: space-around;
         text-align: center;
         color: #fff;
@@ -12,11 +15,13 @@
         font-size: 20px;
         overflow-x: auto;
     }
+/* .weekly-item {
+    display: flex;
+    flex-wrap: nowrap;
+} */
 }
 
-body{
-    background-color: #514E81;
-}
+
 .weekly_forecast {
     display: flex;
     justify-content: space-around;
@@ -25,4 +30,7 @@ body{
     font-family: 'Roboto Flex';
     font-size: 24;
     background-color: rgb(217, 217, 217, 10%);
+    margin: 5%;
+    padding: 2%;
+    border-radius: 30px;
 }
