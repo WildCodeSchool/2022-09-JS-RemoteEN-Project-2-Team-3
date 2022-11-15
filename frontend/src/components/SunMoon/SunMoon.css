@@ -1,13 +1,22 @@
 .sun_moon_main {
     color: white;
-}
-.icons {
     display: flex;
     flex-wrap: nowrap;
-    justify-content: space-around;
+    margin-top: 5%;
+}
+.sun {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: stretch;
     align-items: center;
-    margin: 3% 0;
-    padding-bottom: 2%;
+}
+.moon {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
 }
 .sun img {
     width: 45%;
@@ -20,11 +29,11 @@
     flex-wrap: nowrap;
     justify-content: space-around;
 }
-.info_sun, .info_moon{
+.info_sun, .info_moon {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
-    width: 30%;
+    width: 60%;
     border-top: 0.1em solid;
 }
 .rise {
@@ -38,3 +47,22 @@
     gap: 10px;
 }
 
+@media screen and (max-width: 1023px) {
+    .sun_moon_main {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 10%;
+    }
+    .sun, .moon {
+        margin-bottom: 10%;
+    }
+    .sun img {
+        width: 55%;
+    }
+    .moon img {
+        width: 65%;
+    }
+    .info_sun, .info_moon {
+        width: 60%;
+    }
+}

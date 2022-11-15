@@ -8,29 +8,11 @@ import moon from "./Icons/moon3.png";
 export default function SunMoon({ dailyWeather }) {
   return (
     <div className="sun_moon_main">
-      <div className="icons">
-        <div className="sun">
-          <img src={sun} alt="sun" />
-        </div>
-        <div className="moon">
-          <img src={moon} alt="moon" />
-          {dailyWeather && (
-            <p>
-              {dailyWeather.daily[0].moon_phase === 0
-                ? "New moon"
-                : dailyWeather.daily[0].moon_phase === 1
-                ? "New moon"
-                : dailyWeather.daily[0].moon_phase === 0.25
-                ? "First quarter moon"
-                : dailyWeather.daily[0].moon_phase === 0.5
-                ? "Full moon"
-                : "Last quarter moon"}
-            </p>
-          )}
-        </div>
-      </div>
       {dailyWeather && (
-        <div className="info">
+        <div className="sun">
+          <div className="sun_icon">
+            <img src={sun} alt="sun" />
+          </div>
           <div className="info_sun">
             <div className="rise">
               <p>↑</p>
@@ -54,6 +36,28 @@ export default function SunMoon({ dailyWeather }) {
               </p>
               <p>↓</p>
             </div>
+          </div>
+        </div>
+      )}
+      {dailyWeather && (
+        <div className="moon">
+          <div className="moon_icon">
+            <img src={moon} alt="moon" />
+          </div>
+          <div className="moon_phase">
+            {dailyWeather && (
+              <p>
+                {dailyWeather.daily[0].moon_phase === 0
+                  ? "New moon"
+                  : dailyWeather.daily[0].moon_phase === 1
+                  ? "New moon"
+                  : dailyWeather.daily[0].moon_phase === 0.25
+                  ? "First quarter moon"
+                  : dailyWeather.daily[0].moon_phase === 0.5
+                  ? "Full moon"
+                  : "Last quarter moon"}
+              </p>
+            )}
           </div>
           <div className="info_moon">
             <div className="rise">

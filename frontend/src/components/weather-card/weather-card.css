@@ -103,7 +103,7 @@ header {
 .logo img {
     width: 80%;
 }
-@media  screen and (min-width: 1024px) {
+@media  screen and (min-width: 1023px) {
     .weather-card {
         width: 30%;
     }
