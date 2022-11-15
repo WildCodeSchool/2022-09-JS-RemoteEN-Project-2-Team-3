@@ -1,0 +1,40 @@
+.sun_moon_main {
+    color: white;
+}
+.icons {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 3% 0;
+    padding-bottom: 2%;
+}
+.sun img {
+    width: 45%;
+}
+.moon img {
+    width: 55%;
+}
+.info {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+.info_sun, .info_moon{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 30%;
+    border-top: 0.1em solid;
+}
+.rise {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+}
+.down {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+}
+

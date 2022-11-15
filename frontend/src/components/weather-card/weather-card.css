@@ -33,7 +33,7 @@
 }
 
 .weather-card ul li img {
-    width: 12%;
+    max-width: 50px;
 }
 
 .city-name {
@@ -110,4 +110,8 @@ header {
     header {
         display: none;
     }
+    .weather-card ul li img {
+        width: 15%;
+    }
+    
 }
