@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import "./DetailForecast.css";
 import NW from "./icons/NWwind-icon.png";
 import W from "./icons/Wwind-icon.png";
@@ -49,24 +48,8 @@ function DetailTodayWeather({
     </div>
   );
 }
-function HourlyWeather() {
-  const [hourWeatherData, setHourWeatherData] = useState();
-
-  const lon = 11.061859;
-  const lat = 49.460983;
-  const APIKey = import.meta.env.VITE_OPENWEATHER_API_KEY;
-
-  useEffect(() => {
-    const API = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&exclude=minutely&appid=${APIKey}`;
-    fetch(API)
-      .then((res) => res.json())
-      .then((data) => {
-        setHourWeatherData(data.hourly);
-      })
-      .catch((err) => console.error(err));
-  }, []);
-  // eslint-disable-next-line no-restricted-syntax
-  if (hourWeatherData) console.log(hourWeatherData);
+function HourlyWeather({ hourWeatherData }) {
+  if (hourWeatherData);
   return (
     <div className="detail_forecast_container">
       <div className="detail_forecast">
