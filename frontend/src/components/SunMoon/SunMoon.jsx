@@ -47,9 +47,9 @@ export default function SunMoon({ dailyWeather }) {
           <div className="moon_phase">
             {dailyWeather && (
               <p>
-                {dailyWeather.daily[0].moon_phase === 0
+                {dailyWeather.daily[0].moon_phase >= 0
                   ? "New moon"
-                  : dailyWeather.daily[0].moon_phase === 1
+                  : dailyWeather.daily.moon_phase <= 1
                   ? "New moon"
                   : dailyWeather.daily[0].moon_phase === 0.25
                   ? "First quarter moon"

@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-no-bind */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import axios from "axios";
@@ -7,6 +6,7 @@ import WeatherCard from "./components/weather-card/weather-card";
 import Weather from "./components/DailyWeather/Weather";
 import DesktopWeather from "./components/DesktopWeather/desktop";
 import HourlyWeather from "./components/DetailForecast/DetailForecast";
+import Alert from "./components/Alert/Alert";
 import "./App.css";
 
 function App() {
@@ -14,6 +14,7 @@ function App() {
   const [air, setAir] = React.useState();
   const [dailyWeather, setDailyWeather] = React.useState();
   const [location, setLocation] = React.useState("London");
+  const [alert, setAlert] = React.useState();
 
   const API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY;
   const API_KEY_DAILY = import.meta.env.VITE_OPENWEATHER_DAILY_API_KEY;
@@ -27,6 +28,7 @@ function App() {
     `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&exclude=minutely&appid=${API_KEY_DAILY}`;
 
   const searchLocation = () => {
+    setAlert(false);
     axios
       .get(currentWeatherUrl)
       .then((response) => response.data)
@@ -48,8 +50,7 @@ function App() {
       .catch((error) => {
         if (error.response) {
           // TODO: Please display a notification in UI
-          // eslint-disable-next-line no-alert
-          alert("Incorrect city!");
+          setAlert(true);
         }
       });
   };
@@ -64,14 +65,21 @@ function App() {
     }
   };
 
-  function handleChange(event) {
+  const handleChange = (event) => {
     setLocation(event.target.value);
-  }
+  };
 
-  const onClickHandler = () => searchLocation();
+  const onClickHandler = () => {
+    searchLocation();
+  };
+
+  const onCloseHandler = () => {
+    setAlert(false);
+  };
 
   return (
     <div className="App">
+      {alert ? <Alert onCloseHandler={onCloseHandler} /> : ""}
       <div className="desktop_flex">
         <DesktopWeather weatherData={weatherData} />
         <WeatherCard
