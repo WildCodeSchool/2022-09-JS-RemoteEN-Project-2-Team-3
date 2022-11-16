@@ -28,6 +28,45 @@
     line-height: 18.75px;
 }
 
+
+#popup-2.popup-content.pop-up-content{
+    background-color: transparent;
+    width: 208px;
+    border: none;
+    box-shadow: none;
+}
+
+.pop-up {
+    position: absolute;
+}
+
+.my-popup-content{
+    background-color: rgba(81, 78, 129, 1);
+    border-radius: 5px;
+    border: none;
+    color: white;
+    padding: 0.5rem 0 0.5rem 0;
+}
+
+.my-popup-content > p {
+    font-weight: 400;
+    text-align: center;
+}
+
+.my-popup-content > ul{
+    list-style: none;
+    color: white;
+    font-size: 18px;
+    font-family: 'Roboto Flex';
+    font-weight: 200;
+    line-height: 28.13px;
+    margin-bottom: 0.5rem;
+}
+
+.my-popup-arrow {
+    color: rgb(155, 35, 35);
+}
+
 @media screen and (min-width: 600px) {
     .footer-body {
         justify-content: space-between;
@@ -64,6 +103,21 @@
         font-size: 1.5em;
         font-style: italic;
         line-height: 28.13px;
+    }
+    #popup-2.popup-content.pop-up-content {
+    width: 230px;
+    }
+    .my-popup-content>p {
+        font-size: 1.3em;
+        font-weight: 200;
+        line-height: 28.13px;
+    }
+    
+    .my-popup-content>ul {
+        font-size: 1.3em;
+        font-weight: 100;
+        line-height: 28.13px;
+        margin-bottom: 0.6rem;
     }
 }
 
