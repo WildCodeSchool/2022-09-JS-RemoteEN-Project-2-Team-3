@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,200;8..144,400&display=swap");
+
+.footer-body{
+    display: flex;
+    flex-direction: row;
+}
+
+.provided-by{
+    display: flex;
+    color: white;
+}
+
+.made-with-love{
+    color: white;
+}
+
+@media screen and (min-width: 600px) {}
+
+@media screen and (min-width: 1023px) {
+    .made-with-love{
+        display: none;
+    }
+}
