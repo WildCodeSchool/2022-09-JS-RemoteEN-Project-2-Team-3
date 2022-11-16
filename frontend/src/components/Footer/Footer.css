@@ -1,23 +1,69 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,200;8..144,400&display=swap");
 
-.footer-body{
+.footer-body {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    border-top-style: solid;
+    border-width: 0.09rem;
+    border-color: rgba(255, 255, 255, 1);
+    margin-top: 0.9rem;
+    font-family: 'Roboto Flex';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18.75px;
 }
 
-.provided-by{
+.provided-by {
     display: flex;
     color: white;
 }
 
-.made-with-love{
+.made-with-love {
     color: white;
+    display: none;
+    font-family: 'Roboto Flex';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18.75px;
 }
 
-@media screen and (min-width: 600px) {}
-
-@media screen and (min-width: 1023px) {
-    .made-with-love{
-        display: none;
+@media screen and (min-width: 600px) {
+    .footer-body {
+        justify-content: space-between;
+        padding: 0 5rem 0;
+    }
+    .provided-by {
+        font-weight: 200;
+        font-size: 1.2em;
+        line-height: 28.13px;
+    }
+     .made-with-love {
+        display: block;
+        font-size: 1.2em;
+        font-weight: 200;
+        line-height: 28.13px;
     }
 }
+
+@media screen and (min-width: 1023px) {
+    .footer-body {
+        justify-content: space-between;
+        padding: 0 4rem 0;
+    }
+    .provided-by {
+        font-weight: 200;
+        font-size: 1.5em;
+        font-weight: 200;
+        line-height: 28.13px;
+    }
+    .made-with-love {
+        display: block;
+        margin-right: 8rem;
+        font-weight: 200;
+        font-size: 1.5em;
+        font-style: italic;
+        line-height: 28.13px;
+    }
+}
+
