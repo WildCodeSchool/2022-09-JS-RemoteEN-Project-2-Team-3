@@ -95,7 +95,7 @@ function App() {
       <div id="weekly" />
       <Weather dailyWeather={dailyWeather} />
       <div id="hourly" />
-      {/* <HourlyWeather /> */}
+      <HourlyWeather />
       <div id="sun_moon" />
       <SunMoon dailyWeather={dailyWeather} />
     </div>
