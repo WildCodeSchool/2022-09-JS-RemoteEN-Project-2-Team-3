@@ -1,4 +1,3 @@
-/* eslint-disable no-nested-ternary */
 import React from "react";
 
 import "./SunMoon.css";
@@ -6,6 +5,19 @@ import sun from "./Icons/sun3.png";
 import moon from "./Icons/moon3.png";
 
 export default function SunMoon({ dailyWeather }) {
+  function phaseMoon(number) {
+    let phaseText = "";
+    if (number === 0 || number === 1) {
+      phaseText = "New moon";
+    } else if (number >= 0.25 && number < 0.5) {
+      phaseText = "First quarter moon";
+    } else if (number >= 0.5 && number < 0.75) {
+      phaseText = "Full moon";
+    } else {
+      phaseText = "Last quarter moon";
+    }
+    return phaseText;
+  }
   return (
     <div className="sun_moon_main">
       {dailyWeather && (
@@ -46,17 +58,7 @@ export default function SunMoon({ dailyWeather }) {
           </div>
           <div className="moon_phase">
             {dailyWeather && (
-              <p>
-                {dailyWeather.daily[0].moon_phase === 0
-                  ? "New moon"
-                  : dailyWeather.daily[0].moon_phase === 1
-                  ? "New moon"
-                  : dailyWeather.daily[0].moon_phase === 0.25
-                  ? "First quarter moon"
-                  : dailyWeather.daily[0].moon_phase === 0.5
-                  ? "Full moon"
-                  : "Last quarter moon"}
-              </p>
+              <p>{phaseMoon(dailyWeather.daily[7].moon_phase)}</p>
             )}
           </div>
           <div className="info_moon">
