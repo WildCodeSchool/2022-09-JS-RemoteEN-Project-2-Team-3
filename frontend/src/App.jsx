@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import axios from "axios";
 import SunMoon from "./components/SunMoon/SunMoon";
@@ -92,10 +91,11 @@ function App() {
           air={air}
         />
       </div>
-      <a id="weekly">
-        <Weather dailyWeather={dailyWeather} />
-      </a>
+      <div id="weekly" />
+      <Weather dailyWeather={dailyWeather} />
+      <div id="hourly" />
       <HourlyWeather />
+      <div id="sun_moon" />
       <SunMoon dailyWeather={dailyWeather} />
     </div>
   );
