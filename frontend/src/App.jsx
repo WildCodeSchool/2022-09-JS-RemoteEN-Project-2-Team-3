@@ -88,13 +88,14 @@ function App() {
           handleChange={handleChange}
           searchLocation={searchLocation}
           weatherData={weatherData}
+          dailyWeather={dailyWeather}
           air={air}
         />
       </div>
       <div id="weekly" />
       <Weather dailyWeather={dailyWeather} />
       <div id="hourly" />
-      <HourlyWeather />
+      {/* <HourlyWeather /> */}
       <div id="sun_moon" />
       <SunMoon dailyWeather={dailyWeather} />
     </div>
