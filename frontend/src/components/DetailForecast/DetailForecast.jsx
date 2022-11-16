@@ -49,7 +49,7 @@ function DetailTodayWeather({
   );
 }
 function HourlyWeather({ hourWeatherData }) {
-  if (hourWeatherData);
+  if (!hourWeatherData) return <span>Loading...</span>;
   return (
     <div className="detail_forecast_container">
       <div className="detail_forecast">
