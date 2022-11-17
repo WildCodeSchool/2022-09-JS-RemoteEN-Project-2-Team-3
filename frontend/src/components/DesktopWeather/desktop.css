@@ -5,6 +5,7 @@
 .header {
     display: flex;
     flex-wrap: nowrap;
+    align-items: center;
     margin: 1% 1%;
 }
 .navbar {
@@ -19,6 +20,9 @@
 .navbar ul li {
     margin: 0 5%;
     list-style-type: none;
+}
+.logo {
+    width: 20%;
 }
 .logo img {
     width: 100%;
@@ -44,6 +48,10 @@
 }
 .navbar a:hover {
     color: rgb(208, 208, 208);
+}
+
+.weather_icon img {
+    width: 10%;
 }
 
 @media screen and (max-width: 1023px) {

@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "./Icons/logo.svg";
+import logo from "./Icons/logohd.png";
 import "./desktop.css";
 
 function DesktopWeather({ weatherData }) {
@@ -7,14 +7,19 @@ function DesktopWeather({ weatherData }) {
     <div className="main_container">
       <div className="header">
         <div className="logo">
-          <img src={logo} alt={logo} />
+          <img src={logo} alt="logo" />
         </div>
         <div className="navbar">
           <ul>
             <li>
-              <a href="#daily">Detail hourly forecast</a>
+              <a href="#hourly">Detail hourly forecast</a>
             </li>
-            <a href="#weekly">Detail weekly forecast</a>
+            <li>
+              <a href="#weekly">Detail weekly forecast</a>
+            </li>
+            <li>
+              <a href="#sun_moon">Sun and Moon time</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -25,6 +30,12 @@ function DesktopWeather({ weatherData }) {
           </div>
           <div className="current_temperature">
             <p>{Math.round(weatherData.main.temp)}°C</p>
+          </div>
+          <div className="weather_icon">
+            <img
+              src={`http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}
+              alt="icon"
+            />
           </div>
         </div>
       )}
