@@ -1,32 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,200;8..144,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,200;8..144,400&display=swap");
 
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1024px) {
   .weekly_forecast {
     display: flex;
-    justify-content: start;
     text-align: center;
     align-items: none;
     overflow-y: scroll;
     background-color: rgba(203, 198, 214, 0.5);
-    border-radius: 5%;  
+    border-radius: 5%;
+    margin-top: 1rem 0px;
+    justify-content: center;
   }
-    
+
   .weekly-item {
     color: #fff;
     font-size: 10px;
-  } 
+  }
 }
 
 .weekly_forecast {
   display: flex;
-  justify-content: space-around;
   text-align: center;
   color: #fff;
   font-size: 12px;
   background-color: rgb(217, 217, 217, 10%);
   margin: 5%;
   padding: 2%;
-  border-radius: 30px;
+  margin-top: 1rem;
+  border-radius: 20px;
 }
 
 .weekly-item {

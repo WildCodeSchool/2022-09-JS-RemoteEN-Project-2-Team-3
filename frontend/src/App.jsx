@@ -17,7 +17,7 @@ function App() {
   const [hourlyWeather, setHourlyWeather] = React.useState();
   const [isDark, setisDark] = React.useState(false);
   const [location, setLocation] = React.useState("London");
-  const [alert, setAlert] = React.useState()
+  const [alert, setAlert] = React.useState();
 
   const geoLocation = () => {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -36,7 +36,7 @@ function App() {
 
   React.useEffect(() => {
     geoLocation();
-  }, []);;
+  }, []);
 
   const API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY;
   const API_KEY_DAILY = import.meta.env.VITE_OPENWEATHER_DAILY_API_KEY;
@@ -118,8 +118,10 @@ function App() {
           />
         </div>
         <div id="weekly" />
+        <h3>Weekly forecast</h3>
         <Weather dailyWeather={dailyWeather} />
         <div id="hourly" />
+        <h3>Hourly forecast for today</h3>
         <HourlyWeather hourWeatherData={hourlyWeather} />
         <div id="sun_moon" />
         <SunMoon dailyWeather={dailyWeather} />
