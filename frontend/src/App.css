@@ -1,6 +1,6 @@
 @font-face {
   font-family: "RobotoFlex";
-  src: url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap');
+  src: url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap");
 }
 
 html {
@@ -9,16 +9,13 @@ html {
 
 body {
   margin: 0;
-  font-family: 'RobotoFlex', sans-serif;
+  font-family: "RobotoFlex", sans-serif;
   /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: rgb(116, 113, 185);
-  background: linear-gradient(90deg, rgba(116, 113, 185, 1) 0%, rgba(86, 83, 135, 1) 20%, rgba(81, 78, 129, 1) 50%, rgba(90, 87, 139, 1) 80%, rgba(116, 113, 185, 1) 100%);
-  /* background-image: linear-gradient(to right, rgba(81, 78, 129, 0.77), rgba(81, 78, 129, 1), rgba(81, 78, 129, 1),rgba(81, 78, 129, 0.77)); */
-  backdrop-filter: blur(100px);
+  /* background: rgb(116, 113, 185); - duplicate*/
 }
 
 code {
@@ -26,12 +23,36 @@ code {
     monospace;
 }
 
-.App {
+.darkTheme {
   text-align: center;
+  /* background: linear-gradient(
+    90deg,
+    rgba(116, 113, 185, 1) 0%,
+    rgba(86, 83, 135, 1) 20%,
+    rgba(81, 78, 129, 1) 50%,
+    rgba(90, 87, 139, 1) 80%,
+    rgba(116, 113, 185, 1) 100%
+  ); */
+  background: rgba(86, 83, 135);
+  backdrop-filter: blur(100px);
+  color: #fff;
 }
+
+.lightTheme {
+  text-align: center;
+  background: #65a5fd;
+  backdrop-filter: blur(0px);
+  color: #fff;
+}
+
 .desktop_flex {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
 }
-
+h3 {
+  color: #fff;
+  letter-spacing: 1px;
+  font-family: "RobotoFlex", sans-serif;
+  margin-bottom: 10px;
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import SunCalc from "suncalc";
 import SunMoon from "./components/SunMoon/SunMoon";
 import WeatherCard from "./components/weather-card/weather-card";
 import Weather from "./components/DailyWeather/Weather";
@@ -13,8 +14,28 @@ function App() {
   const [air, setAir] = React.useState();
   const [dailyWeather, setDailyWeather] = React.useState();
   const [hourlyWeather, setHourlyWeather] = React.useState();
+  const [isDark, setisDark] = React.useState(false);
   const [location, setLocation] = React.useState("London");
-  const [alert, setAlert] = React.useState();
+  const [alert, setAlert] = React.useState()
+
+  const geoLocation = () => {
+    navigator.geolocation.getCurrentPosition((position) => {
+      const { latitude, longitude } = position.coords;
+      const now = new Date();
+      const { sunrise, sunset } = SunCalc.getTimes(now, longitude, latitude);
+      if (now < sunrise || now > sunset) {
+        setisDark(true);
+        // Dark mode: Before sunrise, or after sunset
+      } else {
+        // Light mode: Any other time
+        setisDark(false);
+      }
+    });
+  };
+
+  React.useEffect(() => {
+    geoLocation();
+  }, []);;
 
   const API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY;
   const API_KEY_DAILY = import.meta.env.VITE_OPENWEATHER_DAILY_API_KEY;
@@ -80,26 +101,28 @@ function App() {
 
   return (
     <div className="App">
-      {alert ? <Alert onCloseHandler={onCloseHandler} /> : ""}
-      <div className="desktop_flex">
-        <DesktopWeather weatherData={weatherData} />
-        <WeatherCard
-          location={location}
-          keyDownHandler={keyDownHandler}
-          onClickHandler={onClickHandler}
-          handleChange={handleChange}
-          searchLocation={searchLocation}
-          weatherData={weatherData}
-          dailyWeather={dailyWeather}
-          air={air}
-        />
+      <div className={isDark ? "darkTheme" : "lightTheme"}>
+        {alert ? <Alert onCloseHandler={onCloseHandler} /> : ""}
+        <div className="desktop_flex">
+          <DesktopWeather weatherData={weatherData} />
+          <WeatherCard
+            location={location}
+            keyDownHandler={keyDownHandler}
+            onClickHandler={onClickHandler}
+            handleChange={handleChange}
+            searchLocation={searchLocation}
+            weatherData={weatherData}
+            dailyWeather={dailyWeather}
+            air={air}
+          />
+        </div>
+        <div id="weekly" />
+        <Weather dailyWeather={dailyWeather} />
+        <div id="hourly" />
+        <HourlyWeather hourWeatherData={hourlyWeather} />
+        <div id="sun_moon" />
+        <SunMoon dailyWeather={dailyWeather} />
       </div>
-      <div id="weekly" />
-      <Weather dailyWeather={dailyWeather} />
-      <div id="hourly" />
-      <HourlyWeather hourWeatherData={hourlyWeather} />
-      <div id="sun_moon" />
-      <SunMoon dailyWeather={dailyWeather} />
     </div>
   );
 }
