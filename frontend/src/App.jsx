@@ -14,6 +14,7 @@ function App() {
   const [air, setAir] = React.useState();
   const [dailyWeather, setDailyWeather] = React.useState();
   const [location, setLocation] = React.useState("London");
+  const [hourlyWeather, setHourlyWeather] = React.useState();
 
   const API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY;
   const API_KEY_DAILY = import.meta.env.VITE_OPENWEATHER_DAILY_API_KEY;
@@ -43,6 +44,7 @@ function App() {
           .then((response) => response.data)
           .then((dailyWeatherData) => {
             setDailyWeather(dailyWeatherData);
+            setHourlyWeather(dailyWeatherData.hourly);
           });
       })
       .catch((error) => {
@@ -87,7 +89,7 @@ function App() {
       <a id="weekly">
         <Weather dailyWeather={dailyWeather} />
       </a>
-      <HourlyWeather />
+      <HourlyWeather hourWeatherData={hourlyWeather} />
       <SunMoon dailyWeather={dailyWeather} />
     </div>
   );
