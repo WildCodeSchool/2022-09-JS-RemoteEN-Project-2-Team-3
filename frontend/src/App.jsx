@@ -93,24 +93,26 @@ function App() {
   const onClickHandler = () => searchLocation();
 
   return (
-    <div className={isDark ? "darkTheme" : "lightTheme"}>
-      <div className="desktop_flex">
-        <DesktopWeather weatherData={weatherData} />
-        <WeatherCard
-          location={location}
-          keyDownHandler={keyDownHandler}
-          onClickHandler={onClickHandler}
-          handleChange={handleChange}
-          searchLocation={searchLocation}
-          weatherData={weatherData}
-          air={air}
-        />
+    <div className="App">
+      <div className={isDark ? "darkTheme" : "lightTheme"}>
+        <div className="desktop_flex">
+          <DesktopWeather weatherData={weatherData} />
+          <WeatherCard
+            location={location}
+            keyDownHandler={keyDownHandler}
+            onClickHandler={onClickHandler}
+            handleChange={handleChange}
+            searchLocation={searchLocation}
+            weatherData={weatherData}
+            air={air}
+          />
+        </div>
+        <a id="weekly">
+          <Weather dailyWeather={dailyWeather} />
+        </a>
+        <h3>Houhly forecast for today</h3>
+        <HourlyWeather hourWeatherData={hourlyWeather} />
       </div>
-      <a id="weekly">
-        <Weather dailyWeather={dailyWeather} />
-      </a>
-      <h3>Houhly forecast for today</h3>
-      <HourlyWeather hourWeatherData={hourlyWeather} />
     </div>
   );
 }
