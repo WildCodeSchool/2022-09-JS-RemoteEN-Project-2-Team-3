@@ -6,6 +6,7 @@ import WeatherCard from "./components/weather-card/weather-card";
 import Weather from "./components/DailyWeather/Weather";
 import DesktopWeather from "./components/DesktopWeather/desktop";
 import HourlyWeather from "./components/DetailForecast/DetailForecast";
+import Footer from "./components/Footer/Footer";
 import Alert from "./components/Alert/Alert";
 import "./App.css";
 
@@ -122,6 +123,7 @@ function App() {
         <HourlyWeather hourWeatherData={hourlyWeather} />
         <div id="sun_moon" />
         <SunMoon dailyWeather={dailyWeather} />
+        <Footer />
       </div>
     </div>
   );
