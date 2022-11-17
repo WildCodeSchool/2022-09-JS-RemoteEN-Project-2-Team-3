@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import axios from "axios";
+import SunMoon from "./components/SunMoon/SunMoon";
 import WeatherCard from "./components/weather-card/weather-card";
 import Weather from "./components/DailyWeather/Weather";
 import DesktopWeather from "./components/DesktopWeather/desktop";
@@ -89,6 +90,7 @@ function App() {
         <Weather dailyWeather={dailyWeather} />
       </a>
       <HourlyWeather hourWeatherData={hourlyWeather} />
+      <SunMoon dailyWeather={dailyWeather} />
     </div>
   );
 }

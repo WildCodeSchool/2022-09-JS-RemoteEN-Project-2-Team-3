@@ -26,6 +26,12 @@ function DesktopWeather({ weatherData }) {
           <div className="current_temperature">
             <p>{Math.round(weatherData.main.temp)}°C</p>
           </div>
+          <div className="weather_icon">
+            <img
+              src={`http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}
+              alt="icon"
+            />
+          </div>
         </div>
       )}
     </div>
