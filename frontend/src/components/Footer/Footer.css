@@ -63,10 +63,6 @@
     margin-bottom: 0.5rem;
 }
 
-.my-popup-arrow {
-    color: rgb(155, 35, 35);
-}
-
 @media screen and (min-width: 600px) {
     .footer-body {
         justify-content: space-between;
@@ -119,5 +115,5 @@
         line-height: 28.13px;
         margin-bottom: 0.6rem;
     }
-}
+} 
 
