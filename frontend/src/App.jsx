@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import axios from "axios";
+import SunCalc from "suncalc";
 import WeatherCard from "./components/weather-card/weather-card";
 import Weather from "./components/DailyWeather/Weather";
 import DesktopWeather from "./components/DesktopWeather/desktop";
@@ -14,6 +15,26 @@ function App() {
   const [dailyWeather, setDailyWeather] = React.useState();
   const [location, setLocation] = React.useState("London");
   const [hourlyWeather, setHourlyWeather] = React.useState();
+  const [isDark, setisDark] = React.useState(false);
+
+  const geoLocation = () => {
+    navigator.geolocation.getCurrentPosition((position) => {
+      const { latitude, longitude } = position.coords;
+      const now = new Date();
+      const { sunrise, sunset } = SunCalc.getTimes(now, longitude, latitude);
+      if (now < sunrise || now > sunset) {
+        setisDark(true);
+        // Dark mode: Before sunrise, or after sunset
+      } else {
+        // Light mode: Any other time
+        setisDark(false);
+      }
+    });
+  };
+
+  React.useEffect(() => {
+    geoLocation();
+  }, []);
 
   const API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY;
   const API_KEY_DAILY = import.meta.env.VITE_OPENWEATHER_DAILY_API_KEY;
@@ -72,7 +93,7 @@ function App() {
   const onClickHandler = () => searchLocation();
 
   return (
-    <div className="App">
+    <div className={isDark ? "darkTheme" : "lightTheme"}>
       <div className="desktop_flex">
         <DesktopWeather weatherData={weatherData} />
         <WeatherCard
@@ -88,6 +109,7 @@ function App() {
       <a id="weekly">
         <Weather dailyWeather={dailyWeather} />
       </a>
+      <h3>Houhly forecast for today</h3>
       <HourlyWeather hourWeatherData={hourlyWeather} />
     </div>
   );
