@@ -5,7 +5,8 @@ import humidity from "./Icons/humidity.png";
 import atmospheric from "./Icons/atmospheric.png";
 import airQuality from "./Icons/airQuality.png";
 import wind from "./Icons/wind.png";
-import logo from "./Icons/logo.svg";
+import uv from "./Icons/uv.png";
+import logo from "./Icons/logohd.png";
 import search from "./Icons/searchButton.svg";
 
 function WeatherCard({
@@ -15,68 +16,15 @@ function WeatherCard({
   air,
   weatherData,
   onClickHandler,
+  dailyWeather,
 }) {
-  // const [weatherData, setWeatherData] = React.useState();
-  // const [air, setAir] = React.useState();
-  // const [location, setLocation] = React.useState("London");
-
-  // const API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY;
-
-  // const baseUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}&units=metric`;
-  // const secondUrl = (lon, lat) =>
-  //   `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${API_KEY}`;
-
-  // const searchLocation = () => {
-  //   axios
-  //     .get(baseUrl)
-  //     .then((response) => response.data)
-  //     .then((data) => {
-  //       axios
-  //         .get(secondUrl(data.coord.lon, data.coord.lat))
-  //         .then((response) => response.data)
-  //         .then((airPollutionData) => {
-  //           setWeatherData(data);
-  //           // console.log("Data:", data);
-  //           setAir(airPollutionData);
-  //           // console.log("Air Pollution:", airPollutionData);
-  //         });
-  //     });
-  // };
-
-  // const searchLocationWithAsync = async () => {
-  //   const data = await axios.get(baseUrl).then((response) => response.data);
-  //   const airPollutionData = await axios
-  //     .get(secondUrl(data.coord.lon, data.coord.lat))
-  //     .then((response) => response.data);
-  //   setWeatherData(data);
-  //   console.log("Data:", data);
-  //   setAir(airPollutionData);
-  //   console.log("Air Pollution:", airPollutionData);
-  // };
-
-  // React.useEffect(() => {
-  //   searchLocation();
-  // }, []);
-
-  // const keyDownHandler = (event) => {
-  //   if (event.key === "Enter") {
-  //     searchLocation();
-  //   }
-  // };
-
-  // console.log(secondUrl);
-
-  // function handleChange(event) {
-  //   setLocation(event.target.value);
-  // }
-
   const date = new Date();
   const setDate = date.toDateString();
 
   return (
     <div className="weather-card">
       <header>
-        <div className="logo">
+        <div className="logo_card">
           <img src={logo} alt={logo} />
         </div>
       </header>
@@ -92,7 +40,7 @@ function WeatherCard({
           <img src={search} alt="search" />
         </button>
       </div>
-      {weatherData && (
+      {weatherData && dailyWeather && (
         <>
           <div className="city-name">
             <p>{weatherData.name}</p>
@@ -116,6 +64,10 @@ function WeatherCard({
               <li>
                 Air quality: {air.list[0].main.aqi}
                 <img src={airQuality} alt="air_quality" />
+              </li>
+              <li>
+                UV-Index: {dailyWeather.current.uvi}
+                <img src={uv} alt="uv" />
               </li>
               <li>
                 Pressure: {weatherData.main.pressure} hPa

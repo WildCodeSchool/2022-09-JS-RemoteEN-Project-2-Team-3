@@ -90,6 +90,7 @@ function App() {
           handleChange={handleChange}
           searchLocation={searchLocation}
           weatherData={weatherData}
+          dailyWeather={dailyWeather}
           air={air}
         />
       </div>
