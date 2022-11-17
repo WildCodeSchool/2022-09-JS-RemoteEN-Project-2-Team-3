@@ -33,7 +33,7 @@
 }
 
 .weather-card ul li img {
-    width: 12%;
+    max-width: 50px;
 }
 
 .city-name {
@@ -100,9 +100,13 @@ header {
     flex-wrap: nowrap;
     justify-content: flex-start;
 }
-.logo img {
-    width: 80%;
+.logo_card {
+    width: 30%;
 }
+.logo_card img {
+    width: 100%;
+}
+
 @media  screen and (min-width: 1024px) {
     .weather-card {
         width: 30%;
@@ -110,4 +114,8 @@ header {
     header {
         display: none;
     }
+    .weather-card ul li img {
+        width: 15%;
+    }
+    
 }
