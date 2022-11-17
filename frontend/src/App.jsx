@@ -12,6 +12,7 @@ function App() {
   const [weatherData, setWeatherData] = React.useState();
   const [air, setAir] = React.useState();
   const [dailyWeather, setDailyWeather] = React.useState();
+  const [hourlyWeather, setHourlyWeather] = React.useState();
   const [location, setLocation] = React.useState("London");
   const [alert, setAlert] = React.useState();
 
@@ -44,6 +45,7 @@ function App() {
           .then((response) => response.data)
           .then((dailyWeatherData) => {
             setDailyWeather(dailyWeatherData);
+            setHourlyWeather(dailyWeatherData.hourly);
           });
       })
       .catch((error) => {
