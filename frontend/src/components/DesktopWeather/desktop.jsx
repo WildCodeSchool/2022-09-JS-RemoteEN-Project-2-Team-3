@@ -1,4 +1,5 @@
 import React from "react";
+import FunnyAdviceCard from "../FunnyAdvice/FunnyAdviceCard";
 import logo from "./Icons/logohd.png";
 import "./desktop.css";
 
@@ -37,6 +38,9 @@ function DesktopWeather({ weatherData }) {
               src={`http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}
               alt="icon"
             />
+          </div>
+          <div className="funny_advice">
+            <FunnyAdviceCard weatherData={weatherData} />
           </div>
         </div>
       )}
