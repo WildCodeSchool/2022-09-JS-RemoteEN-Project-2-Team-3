@@ -40,7 +40,7 @@
   font-size: 7em;
   font-style: normal;
   font-weight: 100;
-  margin: 2% 0 0 0;
+  margin: 2% 0;
 }
 .navbar a {
   color: white;
@@ -57,5 +57,8 @@
 @media screen and (max-width: 1023px) {
   .main_container {
     display: none;
+  }
+  .navbar {
+    display: flex;
   }
 }
