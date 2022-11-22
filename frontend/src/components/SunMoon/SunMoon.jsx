@@ -60,7 +60,10 @@ export default function SunMoon({ dailyWeather }) {
           </div>
           <div className="moon_phase">
             {dailyWeather && (
-              <p>{phaseMoon(dailyWeather.daily[7].moon_phase)}</p>
+              <p>
+                {phaseMoon(dailyWeather.daily[0].moon_phase)} (
+                {dailyWeather.daily[0].moon_phase * 100}%)
+              </p>
             )}
           </div>
           <div className="info_moon">
