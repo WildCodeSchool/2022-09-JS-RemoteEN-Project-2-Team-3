@@ -20,6 +20,7 @@ export default function SunMoon({ dailyWeather }) {
   }
   return (
     <div className="sun_moon_main">
+      <h1>Sun</h1>
       {dailyWeather && (
         <div className="sun">
           <div className="sun_icon">
@@ -51,6 +52,7 @@ export default function SunMoon({ dailyWeather }) {
           </div>
         </div>
       )}
+      <h1>Moon</h1>
       {dailyWeather && (
         <div className="moon">
           <div className="moon_icon">
