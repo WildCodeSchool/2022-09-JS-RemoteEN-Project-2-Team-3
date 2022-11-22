@@ -17,8 +17,12 @@ function App() {
   const [dailyWeather, setDailyWeather] = React.useState();
   const [hourlyWeather, setHourlyWeather] = React.useState();
   const [isDark, setisDark] = React.useState(false);
-  const [location, setLocation] = React.useState("London");
+  const [location, setLocation] = React.useState();
   const [alert, setAlert] = React.useState();
+
+  const API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY;
+  const localCityUrl = (lon, lat) =>
+    `http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=5&appid=${API_KEY}`;
 
   const geoLocation = () => {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -32,14 +36,18 @@ function App() {
         // Light mode: Any other time
         setisDark(false);
       }
+      axios
+        .get(localCityUrl(longitude, latitude))
+        .then((response) => response.data[0])
+        .then((localCityData) => {
+          setLocation(localCityData.name);
+        });
     });
   };
-
   React.useEffect(() => {
     geoLocation();
   }, []);
 
-  const API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY;
   const API_KEY_DAILY = import.meta.env.VITE_OPENWEATHER_DAILY_API_KEY;
 
   const currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}&units=metric`;
@@ -81,7 +89,7 @@ function App() {
 
   React.useEffect(() => {
     searchLocation();
-  }, []);
+  }, [location]);
 
   const keyDownHandler = (event) => {
     if (event.key === "Enter") {
