@@ -9,6 +9,7 @@ import HourlyWeather from "./components/DetailForecast/DetailForecast";
 import Footer from "./components/Footer/Footer";
 import Alert from "./components/Alert/Alert";
 import "./App.css";
+import FunnyAdviceCard from "./components/FunnyAdvice/FunnyAdviceCard";
 
 function App() {
   const [weatherData, setWeatherData] = React.useState();
@@ -126,11 +127,14 @@ function App() {
           />
         </div>
         <div id="weekly" />
+        <h3>Weekly forecast</h3>
         <Weather dailyWeather={dailyWeather} />
         <div id="hourly" />
+        <h3>Hourly forecast for today</h3>
         <HourlyWeather hourWeatherData={hourlyWeather} />
         <div id="sun_moon" />
         <SunMoon dailyWeather={dailyWeather} />
+        <FunnyAdviceCard dailyWeather={dailyWeather} />
         <Footer />
       </div>
     </div>
