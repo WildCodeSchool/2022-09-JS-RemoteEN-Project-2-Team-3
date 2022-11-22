@@ -23,6 +23,7 @@ function DesktopWeather({ weatherData }) {
           </ul>
         </div>
       </div>
+
       {weatherData && (
         <div className="main_info">
           <div className="city">
