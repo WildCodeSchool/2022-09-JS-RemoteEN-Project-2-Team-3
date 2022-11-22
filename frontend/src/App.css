@@ -25,14 +25,6 @@ code {
 
 .darkTheme {
   text-align: center;
-  /* background: linear-gradient(
-    90deg,
-    rgba(116, 113, 185, 1) 0%,
-    rgba(86, 83, 135, 1) 20%,
-    rgba(81, 78, 129, 1) 50%,
-    rgba(90, 87, 139, 1) 80%,
-    rgba(116, 113, 185, 1) 100%
-  ); */
   background: rgba(86, 83, 135);
   backdrop-filter: blur(100px);
   color: #fff;
@@ -54,5 +46,5 @@ h3 {
   color: #fff;
   letter-spacing: 1px;
   font-family: "RobotoFlex", sans-serif;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }

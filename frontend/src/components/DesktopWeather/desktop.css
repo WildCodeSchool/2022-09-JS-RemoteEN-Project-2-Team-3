@@ -51,7 +51,7 @@
 }
 
 .weather_icon img {
-  width: 10%;
+  width: 25%;
 }
 
 @media screen and (max-width: 1023px) {
