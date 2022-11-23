@@ -87,20 +87,11 @@ function App() {
   };
 
   React.useEffect(() => {
-    searchLocation();
-  }, []);
+    if (location != null) searchLocation();
+  }, [location]);
 
-  const handleChange = (event) => {
-    setLocation(event.target.value);
-  };
-
-  const onClickHandler = () => {
-    searchLocation();
-  };
-  const keyDownHandler = (event) => {
-    if (event.key === "Enter") {
-      searchLocation();
-    }
+  const submitNewLocation = (_location) => {
+    if (_location !== "") setLocation(_location);
   };
   const onCloseHandler = () => {
     setAlert(false);
@@ -113,11 +104,7 @@ function App() {
           <div className="desktop_flex">
             <DesktopWeather weatherData={weatherData} />
             <WeatherCard
-              location={location}
-              keyDownHandler={keyDownHandler}
-              onClickHandler={onClickHandler}
-              handleChange={handleChange}
-              searchLocation={searchLocation}
+              submitNewLocation={submitNewLocation}
               weatherData={weatherData}
               dailyWeather={dailyWeather}
               air={air}
