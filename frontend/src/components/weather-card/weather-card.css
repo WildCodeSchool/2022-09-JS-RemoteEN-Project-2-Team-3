@@ -126,6 +126,7 @@ header {
 }
 .logo_card {
   width: 30%;
+  padding-top: 2%;
 }
 .logo_card img {
   width: 100%;
