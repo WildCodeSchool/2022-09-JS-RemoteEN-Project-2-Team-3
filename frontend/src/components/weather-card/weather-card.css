@@ -116,10 +116,14 @@ button {
   font-size: 1rem;
   height: 30px;
 }
+button:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
 
 button img:hover {
-  -webkit-transform: scale(1.2);
-  transform: scale(1.2);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
 header {
   width: 100%;
