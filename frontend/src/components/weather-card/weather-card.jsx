@@ -1,5 +1,5 @@
 import "./weather-card.css";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import ReactSwitch from "react-switch";
 import ThemeContext from "../../contexts/ThemeContext";
 import humidity from "./Icons/humidity.png";
@@ -11,12 +11,9 @@ import logo from "./Icons/logohd.png";
 import search from "./Icons/searchButton.svg";
 
 function WeatherCard({
-  handleChange,
-  keyDownHandler,
-  location,
+  submitNewLocation,
   air,
   weatherData,
-  onClickHandler,
   dailyWeather,
   geoLocation,
 }) {
@@ -24,8 +21,20 @@ function WeatherCard({
   const setDate = date.toDateString();
   const { isDark, setisDark } = useContext(ThemeContext);
 
+  const [locationInput, setLocationInput] = useState("");
+
   const toggleTheme = () => {
     setisDark(!isDark);
+  };
+
+  const handleChange = (e) => {
+    setLocationInput(e.target.value);
+  };
+
+  const keyDownHandler = (event) => {
+    if (event.key === "Enter") {
+      submitNewLocation(locationInput);
+    }
   };
 
   return (
@@ -42,13 +51,16 @@ function WeatherCard({
       <div className="search_section">
         <div className="search">
           <input
-            value={location}
+            value={locationInput}
             onChange={handleChange}
             onKeyDown={keyDownHandler}
             placeholder="Search city"
             type="text"
           />
-          <button type="button" onClick={onClickHandler}>
+          <button
+            type="button"
+            onClick={() => submitNewLocation(locationInput)}
+          >
             <img src={search} alt="search" />
           </button>
         </div>
