@@ -5,7 +5,7 @@ import DailyWeather from "./DailyWeather";
 function Weather({ dailyWeather }) {
   const [isShown, setIsShown] = React.useState(true);
   return (
-    <div>
+    <div className="section_detail_Weekly">
       <div className="optional_detail">
         <h2>Weekly forecast</h2>
         <button

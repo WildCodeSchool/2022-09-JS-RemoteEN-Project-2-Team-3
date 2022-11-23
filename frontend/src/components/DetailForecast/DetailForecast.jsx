@@ -55,7 +55,7 @@ function HourlyWeather({ hourWeatherData }) {
   if (!hourWeatherData) return <span>Loading...</span>;
   const [isShown, setIsShown] = React.useState(true);
   return (
-    <div>
+    <div className="section_detail_daily">
       <div className="optional_detail">
         <h2>Hourly forecast for today</h2>
         <button
