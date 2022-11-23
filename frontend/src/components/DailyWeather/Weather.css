@@ -9,7 +9,7 @@
     background-color: rgba(203, 198, 214, 0.5);
     border-radius: 5%;
     margin-top: 1rem 0px;
-    justify-content: center;
+    justify-content: space-around;
   }
 
   .weekly-item {
@@ -28,10 +28,7 @@
   padding: 2%;
   margin-top: 1rem;
   border-radius: 20px;
-}
-
-.weekly-item {
-  margin: 5px 10px;
+  justify-content: space-around;
 }
 
 @media screen and (max-width: 900px) {

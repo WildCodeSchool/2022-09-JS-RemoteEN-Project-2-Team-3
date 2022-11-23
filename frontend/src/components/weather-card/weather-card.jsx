@@ -81,7 +81,7 @@ function WeatherCard({
                 <img src={airQuality} alt="air_quality" />
               </li>
               <li>
-                UV-Index: {dailyWeather.current.uvi}
+                UV-Index: {Math.round(dailyWeather.current.uvi)}
                 <img src={uv} alt="uv" />
               </li>
               <li>
