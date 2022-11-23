@@ -63,7 +63,7 @@ function HourlyWeather({ hourWeatherData }) {
           onClick={() => setIsShown(!isShown)}
           id="mobile_title"
         >
-          {isShown ? "    ⌃ " : "... ⌄ "}
+          {isShown ? "    ❮ " : "... ❯ "}
         </button>
       </div>
       {isShown && (
