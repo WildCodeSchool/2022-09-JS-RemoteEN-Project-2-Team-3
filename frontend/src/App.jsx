@@ -125,10 +125,8 @@ function App() {
             />
           </div>
           <div id="weekly" />
-          <h2>Weekly forecast</h2>
           <Weather dailyWeather={dailyWeather} />
           <div id="hourly" />
-
           <HourlyWeather hourWeatherData={hourlyWeather} />
           <div id="sun_moon" />
           <SunMoon dailyWeather={dailyWeather} />
