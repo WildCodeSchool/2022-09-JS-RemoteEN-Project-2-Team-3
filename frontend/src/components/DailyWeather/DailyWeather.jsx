@@ -11,8 +11,8 @@ function DailyWeather({ dateNum, dayIcon, tempHigh, tempLow, pop }) {
 
   return (
     <div className="weekly-item">
-      <img src={dayIcon} alt="icon" />
       <h2>{dateNumFormatted}</h2>
+      <img src={dayIcon} alt="icon" />
       <h2>{tempHigh}°C</h2>
       <h2>{tempLow}°C</h2>
       <h2>🌧 {pop * 100}%</h2>
