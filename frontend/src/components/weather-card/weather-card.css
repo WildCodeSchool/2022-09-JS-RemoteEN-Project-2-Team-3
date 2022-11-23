@@ -9,10 +9,16 @@
   justify-content: center;
   align-items: center;
 }
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1;
+}
 .extra-info {
   width: 90%;
   max-width: 500px;
 }
+
 .weather-card ul {
   display: flex;
   flex-wrap: wrap;
@@ -123,6 +129,7 @@ header {
 }
 .logo_card {
   width: 30%;
+  padding-top: 2%;
 }
 .logo_card img {
   width: 100%;
