@@ -135,7 +135,9 @@ function App() {
           <HourlyWeather hourWeatherData={hourlyWeather} />
           <div id="sun_moon" />
           <SunMoon dailyWeather={dailyWeather} />
-          <FunnyAdviceCard dailyWeather={dailyWeather} />
+          <div className="funny_advice_mobile">
+            <FunnyAdviceCard weatherData={weatherData} />
+          </div>
           <Footer />
         </div>
       </ThemeContext.Provider>
