@@ -1,3 +1,4 @@
+import React from "react";
 import "./DetailForecast.css";
 import NW from "./icons/NWwind-icon.png";
 import W from "./icons/Wwind-icon.png";
@@ -52,59 +53,74 @@ function DetailTodayWeather({
 }
 function HourlyWeather({ hourWeatherData }) {
   if (!hourWeatherData) return <span>Loading...</span>;
+  const [isShown, setIsShown] = React.useState(true);
   return (
-    <div className="detail_forecast_container">
-      <div className="detail_forecast">
-        {hourWeatherData ? (
-          hourWeatherData
-            .slice(0, 24)
-            .map((hour) => {
-              return (
-                <DetailTodayWeather
-                  key={hour.dt}
-                  hourNum={hour.dt}
-                  hourIcon={`http://openweathermap.org/img/wn/${hour.weather[0].icon}@2x.png`}
-                  temp={Math.round(hour.temp)}
-                  tempFeels={Math.round(hour.feels_like)}
-                  hourHumidity={Math.round(hour.humidity)}
-                  hourPop={Math.round(hour.pop * 100)}
-                  hourPressure={hour.pressure}
-                  hourWindSpeed={Math.round(hour.wind_speed)}
-                  hourWindDegr={hour.wind_deg}
-                />
-              );
-            })
-            .filter((e, i) => i % 3 === 0)
-        ) : (
-          <h2>Loading...</h2>
-        )}
+    <div>
+      <div className="optional_detail">
+        <h2>Hourly forecast for today</h2>
+        <button
+          type="button"
+          onClick={() => setIsShown(!isShown)}
+          id="mobile_title"
+        >
+          {isShown ? "    ⌃ " : "... ⌄ "}
+        </button>
       </div>
-      <div className="detail_forecast_title">
-        <h3 className="item_title">Hour</h3>
-        <h3 className="item_title" id="desktop_title">
-          Cloudiness
-        </h3>
-        <h3 className="item_title">Temperature</h3>
-        <h3 className="item_title" id="desktop_title">
-          Feels like temperature
-        </h3>
-        <h3 className="item_title" id="desktop_title">
-          Humidity
-        </h3>
-        <h3 className="item_title">Probability of precipitation</h3>
-        <h3 className="item_title" id="desktop_title">
-          Wind direction
-        </h3>
-        <h3 className="item_title" id="desktop_title">
-          Wind speed
-        </h3>
-        <h3 className="item_title" id="mobile_title">
-          Wind
-        </h3>
-        <h3 className="item_title" id="desktop_title">
-          Atmospheric pressure
-        </h3>
-      </div>
+      {isShown && (
+        <div className="detail_forecast_container">
+          <div className="detail_forecast">
+            {hourWeatherData ? (
+              hourWeatherData
+                .slice(0, 24)
+                .map((hour) => {
+                  return (
+                    <DetailTodayWeather
+                      key={hour.dt}
+                      hourNum={hour.dt}
+                      hourIcon={`http://openweathermap.org/img/wn/${hour.weather[0].icon}@2x.png`}
+                      temp={Math.round(hour.temp)}
+                      tempFeels={Math.round(hour.feels_like)}
+                      hourHumidity={Math.round(hour.humidity)}
+                      hourPop={Math.round(hour.pop * 100)}
+                      hourPressure={hour.pressure}
+                      hourWindSpeed={Math.round(hour.wind_speed)}
+                      hourWindDegr={hour.wind_deg}
+                    />
+                  );
+                })
+                .filter((e, i) => i % 3 === 0)
+            ) : (
+              <h2>Loading...</h2>
+            )}
+          </div>
+          <div className="detail_forecast_title">
+            <h3 className="item_title">Hour</h3>
+            <h3 className="item_title" id="desktop_title">
+              Cloudiness
+            </h3>
+            <h3 className="item_title">Temperature</h3>
+            <h3 className="item_title" id="desktop_title">
+              Feels like temperature
+            </h3>
+            <h3 className="item_title" id="desktop_title">
+              Humidity
+            </h3>
+            <h3 className="item_title">Probability of precipitation</h3>
+            <h3 className="item_title" id="desktop_title">
+              Wind direction
+            </h3>
+            <h3 className="item_title" id="desktop_title">
+              Wind speed
+            </h3>
+            <h3 className="item_title" id="mobile_title">
+              Wind
+            </h3>
+            <h3 className="item_title" id="desktop_title">
+              Atmospheric pressure
+            </h3>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

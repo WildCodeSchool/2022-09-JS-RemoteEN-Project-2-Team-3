@@ -131,7 +131,7 @@ function App() {
           <h2>Weekly forecast</h2>
           <Weather dailyWeather={dailyWeather} />
           <div id="hourly" />
-          <h2>Hourly forecast for today</h2>
+
           <HourlyWeather hourWeatherData={hourlyWeather} />
           <div id="sun_moon" />
           <SunMoon dailyWeather={dailyWeather} />
