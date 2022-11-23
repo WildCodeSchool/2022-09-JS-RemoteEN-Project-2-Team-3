@@ -44,7 +44,9 @@ function DetailTodayWeather({
         id="wind_dir"
       />
       <h2 className="hourWindSpeed_body">{hourWindSpeed} km/h</h2>
-      <h2 className="hourPressure_body">{hourPressure} hPa</h2>
+      <h2 className="hourPressure_body" id="desktop_title">
+        {hourPressure} hPa
+      </h2>
     </div>
   );
 }
@@ -78,28 +80,30 @@ function HourlyWeather({ hourWeatherData }) {
         )}
       </div>
       <div className="detail_forecast_title">
-        <h2 className="item_title">Hour</h2>
-        <h2 className="item_title" id="desktop_title">
+        <h3 className="item_title">Hour</h3>
+        <h3 className="item_title" id="desktop_title">
           Cloudiness
-        </h2>
-        <h2 className="item_title">Temperature</h2>
-        <h2 className="item_title" id="desktop_title">
+        </h3>
+        <h3 className="item_title">Temperature</h3>
+        <h3 className="item_title" id="desktop_title">
           Feels like temperature
-        </h2>
-        <h2 className="item_title" id="desktop_title">
+        </h3>
+        <h3 className="item_title" id="desktop_title">
           Humidity
-        </h2>
-        <h2 className="item_title">Probability of precipitation</h2>
-        <h2 className="item_title" id="desktop_title">
+        </h3>
+        <h3 className="item_title">Probability of precipitation</h3>
+        <h3 className="item_title" id="desktop_title">
           Wind direction
-        </h2>
-        <h2 className="item_title" id="desktop_title">
+        </h3>
+        <h3 className="item_title" id="desktop_title">
           Wind speed
-        </h2>
-        <h2 className="item_title" id="mobile_title">
+        </h3>
+        <h3 className="item_title" id="mobile_title">
           Wind
-        </h2>
-        <h2 className="item_title">Atmospheric pressure</h2>
+        </h3>
+        <h3 className="item_title" id="desktop_title">
+          Atmospheric pressure
+        </h3>
       </div>
     </div>
   );

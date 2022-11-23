@@ -7,7 +7,7 @@
     align-items: none;
     overflow-y: scroll;
     background-color: rgba(203, 198, 214, 0.5);
-    border-radius: 5%;
+    border-radius: 2%;
     margin-top: 1rem 0px;
     justify-content: space-around;
   }
@@ -35,5 +35,6 @@
   .weekly_forecast {
     justify-content: start;
     overflow-y: scroll;
+    border-radius: 2%;
   }
 }
