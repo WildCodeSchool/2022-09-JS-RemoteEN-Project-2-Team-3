@@ -23,6 +23,7 @@ function DesktopWeather({ weatherData }) {
           </ul>
         </div>
       </div>
+
       {weatherData && (
         <div className="main_info">
           <div className="city">
@@ -33,7 +34,7 @@ function DesktopWeather({ weatherData }) {
           </div>
           <div className="weather_icon">
             <img
-              src={`http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}
+              src={`http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@4x.png`}
               alt="icon"
             />
           </div>

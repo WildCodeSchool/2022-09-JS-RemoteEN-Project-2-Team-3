@@ -1,121 +1,122 @@
-
 .weather-card {
-    width: 100%;
-    color: white;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  color: white;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .extra-info {
-    width: 90%;
+  width: 90%;
 }
 .weather-card ul {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 0;
 }
 .weather-card ul li {
-    height: 50px;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(203, 198, 214, 0.5);
-    list-style-type: none;
-    margin: 4%;
-    padding: 2% 2%;
-    border-radius: 10px;
+  height: 50px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(203, 198, 214, 0.5);
+  list-style-type: none;
+  margin: 4%;
+  padding: 2% 2%;
+  border-radius: 10px;
 }
 
 .weather-card ul li img {
-    max-width: 50px;
+  max-width: 50px;
 }
 
 .city-name {
-    width: 75%;
+  width: 75%;
 }
 .city-name p {
-    font-size: 3em;
-    font-weight: 300;
-    border-top-style: solid;
-    border-width: 0.09rem;
-    margin-bottom: 2%;
-    padding: 5% 5% 0 5%;
+  font-size: 3em;
+  font-weight: 300;
+  border-top-style: solid;
+  border-width: 0.09rem;
+  margin-bottom: 2%;
+  padding: 5% 5% 0 5%;
 }
 .today-date {
-    width: 75%;
-    font-size: 1.5em;
-    border-bottom-style: solid;
-    border-width: 0.09rem;
-    padding-bottom: 5%;
+  width: 75%;
+  font-size: 1.5em;
+  border-bottom-style: solid;
+  border-width: 0.09rem;
+  padding-bottom: 5%;
 }
-.current-temperature p:first-child{
-    font-size: 3.5em;
-    font-style: normal;
-    font-weight: 100;
-    margin-bottom: 0;
+.current-temperature p:first-child {
+  font-size: 3.5em;
+  font-style: normal;
+  font-weight: 100;
+  margin-bottom: 0;
 }
 .current-temperature p:last-child {
-    margin-top: 3%;
-    font-size: 1.8em;
-    font-weight: 200;
+  margin-top: 3%;
+  font-size: 1.8em;
+  font-weight: 200;
 }
 
 input {
-    color: white;
-    width: 100%;
-    border: none;
-    outline: none;
-    font-size: 20px;
-    background: rgba(76, 73, 119, 0.5);
-    border-radius: 10px;
+  color: white;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  background: rgba(76, 73, 119, 0.5);
+  border-radius: 10px;
 }
 .search {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    margin-top: 5%;
-    width: 40%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  margin-top: 5%;
+  width: 45%;
 }
 button {
-    background-color: transparent;
-    background-repeat: no-repeat;
-    border: none;
-    cursor: pointer;
-    overflow: hidden;
-    outline: none;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
 }
 button img:hover {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
 header {
-    width: 100%;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
 }
 .logo_card {
-    width: 30%;
+  width: 30%;
 }
 .logo_card img {
-    width: 100%;
+  width: 100%;
+}
+.burger {
+  width: 20%;
 }
 
-@media  screen and (min-width: 1024px) {
-    .weather-card {
-        width: 30%;
-    }
-    header {
-        display: none;
-    }
-    .weather-card ul li img {
-        width: 15%;
-    }
-    
+@media screen and (min-width: 1024px) {
+  .weather-card {
+    width: 30%;
+  }
+  header {
+    display: none;
+  }
+  .weather-card ul li img {
+    width: 15%;
+  }
 }

@@ -1,5 +1,4 @@
 import "./weather-card.css";
-// import axios from "axios";
 import React from "react";
 import humidity from "./Icons/humidity.png";
 import atmospheric from "./Icons/atmospheric.png";
@@ -8,6 +7,8 @@ import wind from "./Icons/wind.png";
 import uv from "./Icons/uv.png";
 import logo from "./Icons/logohd.png";
 import search from "./Icons/searchButton.svg";
+
+import Navbar from "../Navbar/Navbar";
 
 function WeatherCard({
   handleChange,
@@ -26,6 +27,9 @@ function WeatherCard({
       <header>
         <div className="logo_card">
           <img src={logo} alt={logo} />
+        </div>
+        <div className="burger">
+          <Navbar />
         </div>
       </header>
       <div className="search">
