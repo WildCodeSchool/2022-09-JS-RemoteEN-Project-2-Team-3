@@ -10,7 +10,7 @@
 
 .detail_forecast_title {
   display: grid;
-  grid-template-columns: 0.6fr 0.7fr 1fr 0.7fr;
+  grid-template-columns: repeat(4, minmax(60px, 1fr));
   grid-template-rows: 40px;
   grid-column-gap: 0px;
   margin: 0;
@@ -27,9 +27,9 @@
   width: 100%;
 }
 .forecast_body {
-  font-size: 0.5rem;
+  font-size: 0.7rem;
   display: grid;
-  grid-template-columns: 0.6fr repeat(2, minmax(60px, 1fr)) 0.7fr minmax(60px);
+  grid-template-columns: repeat(4, minmax(60px, 1fr));
   grid-template-rows: 60px 20px;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
