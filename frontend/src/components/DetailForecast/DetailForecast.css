@@ -1,4 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,200;8..144,400&display=swap");
+
+.section_detail_daily {
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-width: 0.09rem;
+}
 .optional_detail {
   display: flex;
   flex-wrap: nowrap;
@@ -22,6 +28,7 @@
   margin: auto;
   padding: 0px;
   width: 90%;
+  margin-bottom: 5%;
 }
 
 .detail_forecast_title {
@@ -106,6 +113,9 @@
 }
 
 @media screen and (min-width: 600px) {
+  .section_detail_daily {
+    border: none;
+  }
   .detail_forecast_container {
     display: grid;
     grid-template-columns: 0.1fr 1fr;
@@ -117,6 +127,7 @@
     width: 90%;
     margin: auto;
     align-content: center;
+    margin-bottom: 5%;
   }
 
   .detail_forecast_title {
