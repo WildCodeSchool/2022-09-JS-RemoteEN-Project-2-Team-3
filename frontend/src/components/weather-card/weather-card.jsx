@@ -18,6 +18,7 @@ function WeatherCard({
   weatherData,
   onClickHandler,
   dailyWeather,
+  geoLocation,
 }) {
   const date = new Date();
   const setDate = date.toDateString();
@@ -38,18 +39,24 @@ function WeatherCard({
           <ReactSwitch onChange={toggleTheme} checked={isDark === true} />
         </div>
       </header>
-      <div className="search">
-        <input
-          value={location}
-          onChange={handleChange}
-          onKeyDown={keyDownHandler}
-          placeholder="Search city"
-          type="text"
-        />
-        <button type="button" onClick={onClickHandler}>
-          <img src={search} alt="search" />
+      <div className="search_section">
+        <div className="search">
+          <input
+            value={location}
+            onChange={handleChange}
+            onKeyDown={keyDownHandler}
+            placeholder="Search city"
+            type="text"
+          />
+          <button type="button" onClick={onClickHandler}>
+            <img src={search} alt="search" />
+          </button>
+        </div>
+        <button type="button" id="geolocation" onClick={geoLocation}>
+          Get location
         </button>
       </div>
+
       {weatherData && dailyWeather && (
         <>
           <div className="city-name">

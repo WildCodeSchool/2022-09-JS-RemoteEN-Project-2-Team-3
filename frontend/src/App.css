@@ -42,9 +42,11 @@ code {
   flex-wrap: nowrap;
   justify-content: space-between;
 }
-h3 {
+h2 {
   color: #fff;
   letter-spacing: 1px;
-  font-family: "RobotoFlex", sans-serif;
+  width: 100%;
+  font: 1.5em sans-serif;
+
   margin-bottom: 1rem;
 }

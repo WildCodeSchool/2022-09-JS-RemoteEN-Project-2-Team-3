@@ -1,44 +1,62 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,200;8..144,400&display=swap");
 
+.section_detail_daily {
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-width: 0.09rem;
+}
+.optional_detail {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  justify-content: space-between;
+}
+.optional_detail button {
+  color: #ffff;
+  font-size: 1.5rem;
+  flex: 1;
+}
+.optional_detail h2 {
+  color: #ffff;
+  font-size: 1.5rem;
+  flex: 4;
+}
+
 .detail_forecast_container {
   display: flex;
   flex-direction: column;
   margin: auto;
   padding: 0px;
-  width: 95%;
+  width: 90%;
+  margin-bottom: 5%;
+}
+
+.detail_forecast_title {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(60px, 1fr));
+  grid-template-rows: 40px;
+  grid-column-gap: 0px;
+  margin: 0;
+  order: -1;
+}
+
+.item_title {
+  font-size: 0.8rem;
+  margin: auto;
 }
 
 .detail_forecast {
   display: grid;
   width: 100%;
 }
-
-.detail_forecast_title {
-  display: grid;
-  margin: 0;
-  grid-template-columns: 0.6fr repeat(2, minmax(60px, 1fr)) 0.7fr minmax(
-      60px,
-      1fr
-    );
-  width: 99%;
-  order: -1;
-}
-
-.item_title {
-  font-size: 0.8rem;
-}
-
 .forecast_body {
-  font-size: 9px;
+  font-size: 0.7rem;
   display: grid;
-  grid-template-columns: 0.6fr repeat(2, minmax(60px, 1fr)) 0.7fr minmax(
-      60px,
-      1fr
-    );
+  grid-template-columns: repeat(4, minmax(60px, 1fr));
   grid-template-rows: 60px 20px;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  width: 99%;
+  width: 100%;
 }
 
 .forecast_body:nth-of-type(even),
@@ -63,6 +81,7 @@
 .hourPop_body {
   grid-area: 2 / 3 / 3 / 4;
   margin: auto;
+  font-size: 0.8rem;
 }
 .wind_body {
   grid-area: 1 / 4 / 2 / 5;
@@ -71,6 +90,7 @@
 .hourWindSpeed_body {
   grid-area: 2 / 4 / 3 / 5;
   margin: auto;
+  font-size: 0.8rem;
 }
 .hourPressure_body {
   grid-area: 1 / 5 / 3 / 6;
@@ -93,6 +113,9 @@
 }
 
 @media screen and (min-width: 600px) {
+  .section_detail_daily {
+    border: none;
+  }
   .detail_forecast_container {
     display: grid;
     grid-template-columns: 0.1fr 1fr;
@@ -104,6 +127,7 @@
     width: 90%;
     margin: auto;
     align-content: center;
+    margin-bottom: 5%;
   }
 
   .detail_forecast_title {
@@ -114,7 +138,7 @@
     align-self: auto;
   }
 
-  .detail_forecast_title h2 {
+  .detail_forecast_title h3 {
     margin: 5px;
     text-align: left;
     margin: auto;
@@ -125,7 +149,7 @@
   .item_title {
     grid-column-start: 1;
     display: grid;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     width: 100%;
     margin-left: 20px;
   }
@@ -174,6 +198,7 @@
   .hourPop_body {
     grid-area: 6 / 1 / 7 / 2;
     margin: auto;
+    font-size: 1rem;
   }
   .hourPressure_body {
     grid-area: 9 / 1 / 10 / 2;
@@ -191,6 +216,7 @@
   .hourWindSpeed_body {
     grid-area: 8 / 1 / 9 / 2;
     margin: auto;
+    font-size: 1rem;
   }
 
   #wind_dir {

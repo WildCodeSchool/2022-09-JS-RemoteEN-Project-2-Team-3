@@ -1,13 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,200;8..144,400&display=swap");
 
 @media screen and (max-width: 1024px) {
+  .section_detail_Weekly {
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-width: 0.09rem;
+  }
   .weekly_forecast {
     display: flex;
     text-align: center;
     align-items: none;
     overflow-y: scroll;
     background-color: rgba(203, 198, 214, 0.5);
-    border-radius: 5%;
+    border-radius: 2%;
     margin-top: 1rem 0px;
     justify-content: space-around;
   }
@@ -35,5 +40,14 @@
   .weekly_forecast {
     justify-content: start;
     overflow-y: scroll;
+    border-radius: 2%;
+  }
+}
+@media screen and (min-width: 600px) {
+  #mobile_title {
+    display: none;
+  }
+  .section_detail_Weekly {
+    border: none;
   }
 }

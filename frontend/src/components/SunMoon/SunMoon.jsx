@@ -20,6 +20,7 @@ export default function SunMoon({ dailyWeather }) {
   }
   return (
     <div className="sun_moon_main">
+      <h1>Sun</h1>
       {dailyWeather && (
         <div className="sun">
           <div className="sun_icon">
@@ -51,6 +52,7 @@ export default function SunMoon({ dailyWeather }) {
           </div>
         </div>
       )}
+      <h1>Moon</h1>
       {dailyWeather && (
         <div className="moon">
           <div className="moon_icon">
@@ -58,7 +60,10 @@ export default function SunMoon({ dailyWeather }) {
           </div>
           <div className="moon_phase">
             {dailyWeather && (
-              <p>{phaseMoon(dailyWeather.daily[7].moon_phase)}</p>
+              <p>
+                {phaseMoon(dailyWeather.daily[0].moon_phase)} (
+                {dailyWeather.daily[0].moon_phase * 100}%)
+              </p>
             )}
           </div>
           <div className="info_moon">

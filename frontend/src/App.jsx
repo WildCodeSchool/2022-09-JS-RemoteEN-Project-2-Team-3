@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-constructed-context-values */
 import React from "react";
 import axios from "axios";
 import SunCalc from "suncalc";
@@ -20,7 +21,6 @@ function App() {
   const [isDark, setisDark] = React.useState(false);
   const [location, setLocation] = React.useState();
   const [alert, setAlert] = React.useState();
-
   const API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY;
   const localCityUrl = (lon, lat) =>
     `http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=5&appid=${API_KEY}`;
@@ -30,6 +30,7 @@ function App() {
       const { latitude, longitude } = position.coords;
       const now = new Date();
       const { sunrise, sunset } = SunCalc.getTimes(now, longitude, latitude);
+
       if (now < sunrise || now > sunset) {
         setisDark(true);
         // Dark mode: Before sunrise, or after sunset
@@ -90,13 +91,7 @@ function App() {
 
   React.useEffect(() => {
     searchLocation();
-  }, [location]);
-
-  const keyDownHandler = (event) => {
-    if (event.key === "Enter") {
-      searchLocation();
-    }
-  };
+  }, []);
 
   const handleChange = (event) => {
     setLocation(event.target.value);
@@ -105,7 +100,11 @@ function App() {
   const onClickHandler = () => {
     searchLocation();
   };
-
+  const keyDownHandler = (event) => {
+    if (event.key === "Enter") {
+      searchLocation();
+    }
+  };
   const onCloseHandler = () => {
     setAlert(false);
   };
@@ -125,13 +124,12 @@ function App() {
               weatherData={weatherData}
               dailyWeather={dailyWeather}
               air={air}
+              geoLocation={geoLocation}
             />
           </div>
           <div id="weekly" />
-          <h3>Weekly forecast</h3>
           <Weather dailyWeather={dailyWeather} />
           <div id="hourly" />
-          <h3>Hourly forecast for today</h3>
           <HourlyWeather hourWeatherData={hourlyWeather} />
           <div id="sun_moon" />
           <SunMoon dailyWeather={dailyWeather} />

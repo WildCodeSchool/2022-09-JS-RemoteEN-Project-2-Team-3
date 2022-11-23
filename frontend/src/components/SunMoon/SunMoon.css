@@ -1,68 +1,89 @@
 .sun_moon_main {
-    color: white;
-    display: flex;
-    flex-wrap: nowrap;
-    margin-top: 5%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: stretch;
+  margin-top: 2%;
+  height: 270px;
+  justify-content: space-between;
+  max-width: 1000px;
+}
+h1 {
+  width: 50%;
+  font: 1.5em sans-serif;
 }
 .sun {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: stretch;
-    align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: center;
+  width: 50%;
 }
 .moon {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 50%;
 }
 .sun img {
-    width: 45%;
+  width: 45%;
 }
 .moon img {
-    width: 55%;
+  width: 55%;
 }
 .info {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-around;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
 }
-.info_sun, .info_moon {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    width: 60%;
-    border-top: 0.1em solid;
+.info_sun,
+.info_moon {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 60%;
+  border-top: 0.1em solid;
 }
 .rise {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 10px;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
 }
 .down {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 10px;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
 }
 
-@media screen and (max-width: 1023px) {
-    .sun_moon_main {
-        display: flex;
-        flex-wrap: wrap;
-        margin-top: 10%;
-    }
-    .sun, .moon {
-        margin-bottom: 10%;
-    }
-    .sun img {
-        width: 55%;
-    }
-    .moon img {
-        width: 65%;
-    }
-    .info_sun, .info_moon {
-        width: 60%;
-    }
+@media screen and (max-width: 664px) {
+  .sun_moon_main {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10%;
+    height: auto;
+    width: 100%;
+  }
+  h1 {
+    width: 100%;
+    font: 1em sans-serif;
+  }
+  .sun,
+  .moon {
+    margin-bottom: 10%;
+    width: 100%;
+  }
+  .sun img {
+    width: 55%;
+  }
+  .moon img {
+    width: 65%;
+  }
+  .info_sun,
+  .info_moon {
+    width: 60%;
+  }
 }
