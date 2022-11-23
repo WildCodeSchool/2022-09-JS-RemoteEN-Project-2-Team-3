@@ -71,7 +71,7 @@ input {
   border: none;
   outline: none;
   font-size: 20px;
-  background: rgba(76, 73, 119, 0.5);
+  background: rgba(217, 217, 217, 0.15);
   border-radius: 10px;
 }
 .search {
@@ -105,15 +105,41 @@ header {
 .logo_card img {
   width: 100%;
 }
-
+.switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  gap: 1rem;
+  align-self: center;
+}
+label {
+  vertical-align: middle;
+  margin: 0px;
+  height: 100%;
+}
 @media screen and (min-width: 1024px) {
   .weather-card {
     width: 30%;
   }
+
   header {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+  }
+  header .logo_card {
     display: none;
   }
   .weather-card ul li img {
     width: 15%;
+  }
+  .switch {
+    margin: 1rem;
+    gap: 0.8rem;
+  }
+  label {
+    font-size: 0.63rem;
   }
 }

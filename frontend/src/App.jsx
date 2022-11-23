@@ -10,6 +10,7 @@ import Footer from "./components/Footer/Footer";
 import Alert from "./components/Alert/Alert";
 import "./App.css";
 import FunnyAdviceCard from "./components/FunnyAdvice/FunnyAdviceCard";
+import ThemeContext from "./contexts/ThemeContext";
 
 function App() {
   const [weatherData, setWeatherData] = React.useState();
@@ -108,37 +109,38 @@ function App() {
   const onCloseHandler = () => {
     setAlert(false);
   };
-
   return (
     <div className="App">
-      <div className={isDark ? "darkTheme" : "lightTheme"}>
-        {alert ? <Alert onCloseHandler={onCloseHandler} /> : ""}
-        <div className="desktop_flex">
-          <DesktopWeather weatherData={weatherData} />
-          <WeatherCard
-            location={location}
-            keyDownHandler={keyDownHandler}
-            onClickHandler={onClickHandler}
-            handleChange={handleChange}
-            searchLocation={searchLocation}
-            weatherData={weatherData}
-            dailyWeather={dailyWeather}
-            air={air}
-          />
+      <ThemeContext.Provider value={{ isDark, setisDark }}>
+        <div className={isDark ? "darkTheme" : "lightTheme"}>
+          {alert ? <Alert onCloseHandler={onCloseHandler} /> : ""}
+          <div className="desktop_flex">
+            <DesktopWeather weatherData={weatherData} />
+            <WeatherCard
+              location={location}
+              keyDownHandler={keyDownHandler}
+              onClickHandler={onClickHandler}
+              handleChange={handleChange}
+              searchLocation={searchLocation}
+              weatherData={weatherData}
+              dailyWeather={dailyWeather}
+              air={air}
+            />
+          </div>
+          <div id="weekly" />
+          <h3>Weekly forecast</h3>
+          <Weather dailyWeather={dailyWeather} />
+          <div id="hourly" />
+          <h3>Hourly forecast for today</h3>
+          <HourlyWeather hourWeatherData={hourlyWeather} />
+          <div id="sun_moon" />
+          <SunMoon dailyWeather={dailyWeather} />
+          <div className="funny_advice_mobile">
+            <FunnyAdviceCard weatherData={weatherData} />
+          </div>
+          <Footer />
         </div>
-        <div id="weekly" />
-        <h3>Weekly forecast</h3>
-        <Weather dailyWeather={dailyWeather} />
-        <div id="hourly" />
-        <h3>Hourly forecast for today</h3>
-        <HourlyWeather hourWeatherData={hourlyWeather} />
-        <div id="sun_moon" />
-        <SunMoon dailyWeather={dailyWeather} />
-        <div className="funny_advice_mobile">
-          <FunnyAdviceCard weatherData={weatherData} />
-        </div>
-        <Footer />
-      </div>
+      </ThemeContext.Provider>
     </div>
   );
 }
