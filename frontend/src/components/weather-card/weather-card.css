@@ -11,6 +11,7 @@
 }
 .extra-info {
   width: 90%;
+  max-width: 500px;
 }
 .weather-card ul {
   display: flex;
@@ -69,14 +70,13 @@
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
-  width: 80%;
+  width: 90%;
 }
 .search {
   display: flex;
   flex-wrap: nowrap;
   justify-content: flex-start;
   margin-top: 5%;
-  flex: 1;
 }
 input {
   color: white;
@@ -101,7 +101,7 @@ button {
 
 #geolocation {
   margin-top: 5%;
-  min-width: 15ch;
+  min-width: 12ch;
   color: white;
   border: none;
   outline: none;
@@ -140,6 +140,16 @@ label {
   margin: 0px;
   height: 100%;
   font-size: 0.83rem;
+}
+@media (441px <= width <= 1023px) {
+  .search_section {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    gap: 40px;
+  }
 }
 @media screen and (min-width: 1024px) {
   .weather-card {
