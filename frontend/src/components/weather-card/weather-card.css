@@ -180,4 +180,7 @@ label {
   label {
     font-size: 0.63rem;
   }
+  .burger {
+    display: none;
+  }
 }
