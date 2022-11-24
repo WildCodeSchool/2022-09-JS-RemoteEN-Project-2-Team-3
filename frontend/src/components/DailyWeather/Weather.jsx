@@ -5,7 +5,7 @@ import useMediaQuery from "../../hooks/useMediaQuery";
 
 function Weather({ dailyWeather }) {
   const [isShown, setIsShown] = React.useState(true);
-  const isDesktop = useMediaQuery("600px");
+  const isDesktop = useMediaQuery({ minWidth: "600px" });
   return (
     <div className="section_detail_Weekly">
       <div className="optional_detail">
@@ -18,27 +18,26 @@ function Weather({ dailyWeather }) {
           {isShown ? "    ❮ " : "... ❯ "}
         </button>
       </div>
-      {isDesktop ||
-        (isShown && (
-          <div className="weekly_forecast">
-            {dailyWeather != null ? (
-              dailyWeather.daily.slice(0, 7).map((day) => {
-                return (
-                  <DailyWeather
-                    key={day.dt}
-                    dateNum={day.dt}
-                    dayIcon={`http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`}
-                    tempHigh={Math.round(day.temp.max)}
-                    tempLow={Math.round(day.temp.min)}
-                    pop={Math.round(day.pop)}
-                  />
-                );
-              })
-            ) : (
-              <h2>Loading...</h2>
-            )}
-          </div>
-        ))}
+      {(isDesktop || isShown) && (
+        <div className="weekly_forecast">
+          {dailyWeather != null ? (
+            dailyWeather.daily.slice(0, 7).map((day) => {
+              return (
+                <DailyWeather
+                  key={day.dt}
+                  dateNum={day.dt}
+                  dayIcon={`http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`}
+                  tempHigh={Math.round(day.temp.max)}
+                  tempLow={Math.round(day.temp.min)}
+                  pop={Math.round(day.pop)}
+                />
+              );
+            })
+          ) : (
+            <h2>Loading...</h2>
+          )}
+        </div>
+      )}
     </div>
   );
 }
