@@ -11,7 +11,7 @@ function Footer() {
       <Popup
         className="pop-up"
         position="top center"
-        trigger={<p className="made-with-love"> Made with 💙 </p>}
+        trigger={<p className="made-with-love"> Made with 💙</p>}
       >
         <div className="my-popup-content">
           <p>Development Team 👨‍💻</p>
