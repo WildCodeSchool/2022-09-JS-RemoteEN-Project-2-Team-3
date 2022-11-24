@@ -8,6 +8,7 @@
   height: 270px;
   justify-content: space-between;
   max-width: 1000px;
+  margin: auto;
 }
 h1 {
   width: 50%;
@@ -65,7 +66,7 @@ h1 {
     flex-wrap: wrap;
     margin-top: 10%;
     height: auto;
-    width: 100%;
+    width: 99%;
   }
   h1 {
     width: 100%;

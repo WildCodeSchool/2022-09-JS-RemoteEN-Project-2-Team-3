@@ -9,10 +9,16 @@
   justify-content: center;
   align-items: center;
 }
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1;
+}
 .extra-info {
   width: 90%;
   max-width: 500px;
 }
+
 .weather-card ul {
   display: flex;
   flex-wrap: wrap;
@@ -110,10 +116,14 @@ button {
   font-size: 1rem;
   height: 30px;
 }
+button:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
 
 button img:hover {
-  -webkit-transform: scale(1.2);
-  transform: scale(1.2);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
 header {
   width: 100%;
@@ -123,6 +133,7 @@ header {
 }
 .logo_card {
   width: 30%;
+  padding-top: 2%;
 }
 .logo_card img {
   width: 100%;
