@@ -10,16 +10,22 @@ export default function Navabar() {
   };
 
   return (
-    <Menu isOpen={handleChange} right noOverlay>
+    <Menu
+      onClick={handleChange}
+      isOpen={handleChange}
+      right
+      noTransition
+      noOverlay
+    >
       <ul>
-        <li>
-          <a onClick={handleChange} href="#hourly">
-            Detail hourly forecast
-          </a>
-        </li>
         <li>
           <a onClick={handleChange} href="#weekly">
             Detail weekly forecast
+          </a>
+        </li>
+        <li>
+          <a onClick={handleChange} href="#hourly">
+            Detail hourly forecast
           </a>
         </li>
         <li>
