@@ -8,10 +8,11 @@ import overwhelmed from "./icons/overwhelmed.png";
 import awkward from "./icons/awkward.png";
 import bell from "./icons/bell.png";
 
-function FunnyAdviceCard({ dailyWeather = {} }) {
+function FunnyAdviceCard({ weatherData = {} }) {
   let adviceText = "";
   let adviceImg;
-  const { current: { temp } = {} } = dailyWeather;
+
+  const { main: { temp } = {} } = weatherData;
 
   if (temp >= 30) {
     adviceText = "Happiness is a day at the pool.";
@@ -40,7 +41,7 @@ function FunnyAdviceCard({ dailyWeather = {} }) {
 
   return (
     <div className="funny-advice">
-      {dailyWeather && (
+      {weatherData && (
         <div className="funny-advice-card">
           <img className="advice-bell" src={bell} alt="advice-bell" />
           <p> {adviceText} </p>
