@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,200;8..144,400&display=swap");
 
+    
 .funny-advice-card{
     display: flex;
     flex-direction: row;
@@ -28,6 +29,9 @@
     }
 }
 @media screen and (min-width: 1023px) {
+    .funny_advice_mobile{
+        display: none;
+    }
     .funny-advice-card {
         font-size: 1.5em;
         font-weight: 200;
@@ -38,4 +42,5 @@
         width: 26px;
         height: 26px;
     }
+    
 }

@@ -39,7 +39,7 @@ function DesktopWeather({ weatherData }) {
               alt="icon"
             />
           </div>
-          <div className="funny_advice">
+          <div className="funny_advice_desktop">
             <FunnyAdviceCard weatherData={weatherData} />
           </div>
         </div>
