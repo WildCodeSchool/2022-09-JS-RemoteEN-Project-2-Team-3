@@ -8,6 +8,7 @@ import SW from "./icons/SWwind-icon.png";
 import SE from "./icons/SEwind-icon.png";
 import N from "./icons/Nwind-icon.png";
 import NE from "./icons/NEwind-icon.png";
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 function DetailTodayWeather({
   hourNum,
@@ -54,6 +55,7 @@ function DetailTodayWeather({
 function HourlyWeather({ hourWeatherData }) {
   if (!hourWeatherData) return <span>Loading...</span>;
   const [isShown, setIsShown] = React.useState(true);
+  const isDesktop = useMediaQuery("600px");
   return (
     <div className="section_detail_daily">
       <div className="optional_detail">
@@ -66,7 +68,7 @@ function HourlyWeather({ hourWeatherData }) {
           {isShown ? "    ❮ " : "... ❯ "}
         </button>
       </div>
-      {isShown && (
+      {isDesktop || isShown && (
         <div className="detail_forecast_container">
           <div className="detail_forecast">
             {hourWeatherData ? (
