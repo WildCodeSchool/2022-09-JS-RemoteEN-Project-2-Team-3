@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-const useMediaQuery = (minWidth, maxWidth) => {
+const useMediaQuery = ({ minWidth, maxWidth }) => {
   const mediaQuery = "screen".concat(
     minWidth !== undefined ? ` and (min-width: ${minWidth})` : "",
     maxWidth !== undefined ? ` and (max-width: ${maxWidth})` : ""
