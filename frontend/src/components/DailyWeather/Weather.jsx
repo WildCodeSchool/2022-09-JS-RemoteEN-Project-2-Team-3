@@ -1,9 +1,11 @@
 import React from "react";
 import "./Weather.css";
 import DailyWeather from "./DailyWeather";
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 function Weather({ dailyWeather }) {
   const [isShown, setIsShown] = React.useState(true);
+  const isDesktop = useMediaQuery("600px");
   return (
     <div className="section_detail_Weekly">
       <div className="optional_detail">
@@ -16,7 +18,7 @@ function Weather({ dailyWeather }) {
           {isShown ? "    ❮ " : "... ❯ "}
         </button>
       </div>
-      {isShown && (
+      {isDesktop || isShown && (
         <div className="weekly_forecast">
           {dailyWeather != null ? (
             dailyWeather.daily.slice(0, 7).map((day) => {
