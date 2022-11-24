@@ -17,7 +17,7 @@ function App() {
   const [dailyWeather, setDailyWeather] = React.useState();
   const [hourlyWeather, setHourlyWeather] = React.useState();
   const [isDark, setisDark] = React.useState(false);
-  const [location, setLocation] = React.useState("London");
+  const [location, setLocation] = React.useState();
   const [alert, setAlert] = React.useState();
 
   const API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY;
