@@ -119,4 +119,7 @@ header {
   .weather-card ul li img {
     width: 15%;
   }
+  .burger {
+    display: none;
+  }
 }
