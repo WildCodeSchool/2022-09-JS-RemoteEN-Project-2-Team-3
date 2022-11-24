@@ -1,5 +1,7 @@
 import "./weather-card.css";
-import React from "react";
+import React, { useContext } from "react";
+import ReactSwitch from "react-switch";
+import ThemeContext from "../../contexts/ThemeContext";
 import humidity from "./Icons/humidity.png";
 import atmospheric from "./Icons/atmospheric.png";
 import airQuality from "./Icons/airQuality.png";
@@ -21,6 +23,11 @@ function WeatherCard({
 }) {
   const date = new Date();
   const setDate = date.toDateString();
+  const { isDark, setisDark } = useContext(ThemeContext);
+
+  const toggleTheme = () => {
+    setisDark(!isDark);
+  };
 
   return (
     <div className="weather-card">
@@ -30,6 +37,10 @@ function WeatherCard({
         </div>
         <div className="burger">
           <Navbar />
+        </div>
+        <div className="switch">
+          <label>{isDark ? "Dark Mode" : "Light Mode"}</label>
+          <ReactSwitch onChange={toggleTheme} checked={isDark === true} />
         </div>
       </header>
       <div className="search">
