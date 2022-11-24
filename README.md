@@ -22,7 +22,7 @@ Here you can find weather data:
 - 	Moon phase
 
 #The link on the App design :  
-- https://www.figma.com/file/drV89b86DLvdZDdF9FVt2y/newWeatherApp-design?node-id=0%3A1
+- https://www.figma.com/file/pgimunGLgEFR6tz3saPyFt/WeatherAppFinalDesign?node-id=0%3A1&t=Rx518JuEFs9fOIMP-0
 
 #The API source link: 
 - https://openweathermap.org/
